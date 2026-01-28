@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta name="google-site-verification" content="tPibLi6m86OG-FIl73zJk_iCUckv0W7T7jaRq7QDCs8" />
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="משרד עו'ד עופר כגן - אסטרטגיה משפטית מנצחת. ליטיגציה מסחרית, דיני עבודה, נדל'ן וגישור.">
@@ -12,7 +10,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.lk-law.co.il/">
     <meta property="og:title" content="עו'ד עופר כגן | אסטרטגיה משפטית מנצחת">
-    <meta property="og:image" content="https://www.lk-law.co.il/images/ofer1.jpg">
+    <meta property="og:image" content="images/ofer1.jpg">
 
     <title>עו"ד עופר כגן | משרד עורכי דין וגישור</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -74,7 +72,7 @@
         .nav-links a:hover::after { width: 100%; }
         .hamburger { display: none; color: var(--accent); font-size: 1.6rem; cursor: pointer; position: absolute; left: 20px; top: 30px; z-index: 2001; }
 
-        /* Hero Section */
+        /* Hero Section - V7 Design */
         .hero { 
             background-color: var(--bg-deep);
             background-image: linear-gradient(rgba(10, 30, 51, 0.9), rgba(10, 30, 51, 0.7)), url('images/hero-bg.jpg');
@@ -100,12 +98,22 @@
         .ticker-text a::before { content: '•'; color: var(--accent); margin-left: 15px; font-size: 1.2rem; }
         @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-        /* Daily Tip */
+        /* --- Daily Tip --- */
         .daily-tip { 
-            max-width: 900px; margin: 10px auto; background: #fff; border: 1px solid #e2e8f0;
-            border-right: 5px solid var(--accent); padding: 8px 20px; font-weight: 600; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.04); font-size: 1.05rem; color: var(--bg-deep); 
-            display: flex; align-items: center; border-radius: 6px; min-height: 55px;
+            max-width: 900px; 
+            margin: 10px auto; 
+            background: #fff; 
+            border: 1px solid #e2e8f0;
+            border-right: 5px solid var(--accent); 
+            padding: 8px 20px; 
+            font-weight: 600; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.04); 
+            font-size: 1.05rem; 
+            color: var(--bg-deep); 
+            display: flex; 
+            align-items: center; 
+            border-radius: 6px; 
+            min-height: 55px;
         }
         .daily-tip::before { content: '\f0eb'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--accent); font-size: 1.4rem; margin-left: 15px; }
         .tip-category { color: var(--primary); background: #eef2f6; padding: 2px 8px; border-radius: 4px; margin-left: 10px; font-size: 0.9rem; font-weight: 800; white-space: nowrap; }
@@ -117,61 +125,16 @@
         .divider { height: 3px; width: 60px; background: var(--accent); margin: 0 auto 10px; border-radius: 2px; }
         .sub-title { font-size: 1.1rem; color: #64748b; font-weight: 500; max-width: 600px; margin: 0 auto; border-top: 1px solid #e2e8f0; padding-top: 10px; display: inline-block;}
 
-  /* --- About Section Fix --- */
-        .about-grid { 
-            display: grid; 
-            grid-template-columns: 1.2fr 1fr; 
-            gap: 50px; 
-            align-items: center; 
-        }
-
-        .about-text h3 { 
-            margin: 20px 0 10px; 
-            color: var(--primary); 
-            font-size: 1.5rem; 
-            display: flex; 
-            align-items: center; 
-        }
-        
-        .about-text h3::before { 
-            content: ''; 
-            width: 6px; 
-            height: 25px; 
-            background: var(--accent); 
-            margin-left: 12px; 
-            border-radius: 4px; 
-        }
-
-        /* זה החלק הקריטי שתוקן */
-        .image-stack { 
-            position: relative; 
-            height: 450px; /* חובה! מחזיר את התמונות שנעלמו */
-            width: 100%;
-            max-width: 550px; /* חובה! מונע מהתמונות לגדול מדי ולכסות את הטקסט במסך רחב */
-            margin: 0 auto; /* ממרכז את התמונות בתוך העמודה שלהן */
-        }
-
-        .image-stack img { 
-            position: absolute; 
-            width: 85%; /* הרוחב הוא יחסי ל-550 פיקסלים שהגדרנו למעלה */
-            border-radius: 12px; 
-            box-shadow: 0 20px 50px rgba(0,0,0,0.12); 
-            border: 5px solid white; 
-            transition: 0.4s; 
-            object-fit: cover; 
-        }
-
+        /* About */
+        .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: center; }
+        .about-text h3 { margin: 20px 0 10px; color: var(--primary); font-size: 1.5rem; display: flex; align-items: center; }
+        .about-text h3::before { content: ''; width: 6px; height: 25px; background: var(--accent); margin-left: 12px; border-radius: 4px; }
+        .image-stack { position: relative; height: 420px; }
+        .image-stack img { position: absolute; width: 85%; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.12); border: 5px solid white; transition: 0.4s; object-fit: cover; }
         .img-back { top: 0; right: 0; z-index: 1; filter: grayscale(30%); }
         .img-front { bottom: 0; left: 0; z-index: 2; }
-        
         .image-stack:hover .img-back { transform: translate(15px, -15px); z-index: 3; filter: grayscale(0%); }
         .image-stack:hover .img-front { transform: translate(-15px, 15px); z-index: 1; filter: grayscale(30%); }
-
-        /* התאמה למובייל נשארת זהה */
-        @media (max-width: 1024px) {
-            .about-grid { grid-template-columns: 1fr; }
-            .image-stack { height: 350px; margin-bottom: 30px; max-width: 100%; } /* במובייל מבטלים את הגבלת הרוחב */
-        }
 
         /* Services */
         .tabs-container { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.04); }
@@ -195,15 +158,21 @@
         .service-cta a { color: var(--bg-deep); font-weight: 700; text-decoration: none; font-size: 1.1rem; display: inline-flex; align-items: center; transition: 0.3s; }
         .service-cta a:hover { color: var(--accent); }
 
-        /* Why Choose Us & Slider */
+        /* Why Choose Us & Media */
         .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .why-item { padding: 40px 25px; background: white; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.03); transition: 0.4s; text-align: center; border-bottom: 3px solid transparent; }
+        .why-item { padding: 40px 25px; background: white; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.03); transition: 0.4s; text-align: center; border-bottom: 3px solid transparent; display: flex; flex-direction: column; align-items: center; }
         .why-item:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.06); border-bottom-color: var(--accent); }
         .why-icon-box { width: 80px; height: 80px; background: #f8fafc; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; transition: 0.4s; }
         .why-item:hover .why-icon-box { background: var(--accent); color: white; }
         .why-icon-box i { font-size: 2rem; color: var(--primary); transition: 0.4s; }
         .why-item:hover .why-icon-box i { color: white; }
         .why-item h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--primary); }
+
+        /* Media Card Styles */
+        .media-source { background: #f1f5f9; color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 800; margin-bottom: 15px; display: inline-block; border: 1px solid #e2e8f0; }
+        .why-item.media-card p { flex-grow: 1; margin-bottom: 20px; font-size: 0.95rem; }
+        .read-more-btn { color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.95rem; border: 1px solid var(--accent); padding: 8px 20px; border-radius: 50px; transition: 0.3s; margin-top: auto; }
+        .read-more-btn:hover { background: var(--accent); color: white; }
 
         .slider-wrap { position: relative; overflow: hidden; padding: 10px 0; min-height: 250px; }
         .slide-group { display: none; grid-template-columns: repeat(3, 1fr); gap: 25px; width: 100%; }
@@ -530,6 +499,34 @@
     </div>
 </section>
 
+<section id="media" class="section fade-on-scroll" style="background: white;">
+    <div class="section-title">
+        <h2>כתבו עלינו</h2>
+        <div class="divider"></div>
+        <div class="sub-title">סיקור עיתונאי ופסקי דין נבחרים</div>
+    </div>
+    <div class="why-grid">
+        <div class="why-item media-card">
+            <div class="media-source">Ynet</div>
+            <h3>פיטורים בהריון</h3>
+            <p>בית הדין קיבל את תביעתנו וקבע: פיטורי עובדת בהריון היו שלא כדין. העובדת פוצתה בכ-45,000 ש"ח.</p>
+            <a href="http://www.ynet.co.il/articles/0,7340,L-4566466,00.html" target="_blank" class="read-more-btn">לקריאת הכתבה <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="why-item media-card">
+            <div class="media-source">פסקדין</div>
+            <h3>זיכוי פאב מעישון</h3>
+            <p>ניצחון בבית המשפט: זיכוי מלא לפאב "דבלין" מאישומים על אי-מניעת עישון, לאחר שהוכחנו אכיפה יעילה.</p>
+            <a href="http://www.psakdin.co.il/Document/%D7%A4%D7%A7%D7%97%D7%99%D7%9D-%D7%AA%D7%A4%D7%A1%D7%95-%D7%9E%D7%A2%D7%A9%D7%A0%D7%99%D7%9D-%D7%91%D7%A4%D7%90%D7%91-%D7%93%D7%91%D7%9C%D7%99%D7%9F-%C2%A0%E2%80%93-%D7%94%D7%A9%D7%95%D7%A4%D7%98-%D7%96%D7%99%D7%9B%D7%94-%D7%9E%D7%94%D7%90%D7%99%D7%A9%D7%95%D7%9E%D7%99%D7%9D#.VQlUltKsUVI" target="_blank" class="read-more-btn">לקריאת הכתבה <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="why-item media-card">
+            <div class="media-source">פסקדין</div>
+            <h3>ביטול מכרז עירייה</h3>
+            <p>בית המשפט קיבל את העתירה שהגשנו ועצר מכרז פגום של עיריית קרית מוצקין בשל חשש להטיה.</p>
+            <a href="http://www.psakdin.co.il/Document/%D7%94%D7%90%D7%9D-%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA-%D7%A7%D7%A8%D7%99%D7%AA-%D7%9E%D7%95%D7%A6%D7%A7%D7%99%D7%9F-%D7%A0%D7%99%D7%A1%D7%AA%D7%94-%D7%9C%D7%94%D7%98%D7%95%D7%AA-%D7%9E%D7%9B%D7%A8%D7%96#.Vbc8jLNViko" target="_blank" class="read-more-btn">לקריאת הכתבה <i class="fas fa-external-link-alt"></i></a>
+        </div>
+    </div>
+</section>
+
 <div id="mediation" class="mediation-section fade-on-scroll">
     <div class="mediation-bg"></div>
     <div class="mediation-content">
@@ -544,7 +541,7 @@
                 <div class="m-feature"><i class="fas fa-users"></i> גישור משפחתי וגירושין</div>
                 <div class="m-feature"><i class="fas fa-briefcase"></i> גישור עסקי ומסחרי</div>
                 <div class="m-feature"><i class="fas fa-hand-holding-heart"></i> סכסוכי ירושה וצוואות</div>
-                <div class="m-feature"><i class="fas fa-building"></i> גישור בסכסוכי עבודה</div>
+                <div class="m-feature"><i class="fas fa-building"></i> גישור במחלוקות נדל"ן ודיירים</div>
             </div>
             <a href="https://share.google/lD43xyPQAjoL57j7i" target="_blank" class="cta-btn" style="background: white; color: var(--bg-deep);">מעבר לאתר הגישור <i class="fas fa-external-link-alt" style="margin-right:10px;"></i></a>
         </div>
@@ -558,8 +555,7 @@
         <div class="sub-title">מה אומרים עלינו האנשים שכבר ניצחו</div>
     </div>
     
-    <div class="reviews-container" id="reviews-slider">
-        </div>
+    <div class="reviews-container" id="reviews-slider"></div>
 </section>
 
 <section class="section fade-on-scroll" style="background: #f8fafc;">
