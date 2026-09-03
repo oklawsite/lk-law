@@ -1,0 +1,22 @@
+# Rules-layer integrity (RULE-GITGATE section 6 — a rule ships with its check).
+#
+# Verifies that this repo's self-loading rules layer is intact: the vendored
+# bundle matches its own lock, and CLAUDE.md carries the managed block for that
+# exact signature. Node-independent, no secrets, seconds to run.
+name: rules-load
+
+on:
+  push:
+    branches-ignore:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  rules-bundle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rules bundle integrity
+        run: python3 .rules/check_rules_bundle.py

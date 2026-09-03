@@ -1,0 +1,332 @@
+{
+  "schema": "acceleration-machine/rules-bundle/v1",
+  "canon_repo": "oklawsite-machine/ai-cloud-loader",
+  "canon_commit": "fb21070d4998c21706767e2f7fac4a78d52686c5",
+  "generated_utc": "2026-09-03T13:20:11Z",
+  "registry_signature": "6051c0160d4e4f48b431acc7aa66f31150cec2eceeb85517daf237a99c9b34db",
+  "digest_sha256": "99e2c8494540acd0b596b98fb357c7e1ef71a681196756c748732bd8d055cdd5",
+  "rule_count": 40,
+  "unresolved": [],
+  "rules": [
+    {
+      "id": "RULE-CHECK-BEFORE-MISSING",
+      "status": "ENFORCED (USER_APPROVED 2026-07-16 by Ofer, gold-review decision recFQgD6cXw1HDo7r)",
+      "tier": "ENFORCED",
+      "file": "global-rules/check_local_clone_before_missing_rule_20260713.md",
+      "sha256": "c33c7d55fb0f53792fcfaaab5b1533344d65675902c33049bebb152881908ba4",
+      "purpose": "Before declaring any resource missing, lost, unavailable, or absent — a file, repo,"
+    },
+    {
+      "id": "RULE-DC-ONLY-WRITE",
+      "status": "ENFORCED",
+      "tier": "ENFORCED",
+      "file": "global-rules/RULE-DC-ONLY-WRITE-20260705.md",
+      "sha256": "70e0d224064e6cd4b42d68cb1bafca55ab81c177f42686af0b55ff889808fc74",
+      "purpose": "Prevent the two coupled failures behind INCIDENT-SANDBOX-VS-NODE-WRITE-20260702: a"
+    },
+    {
+      "id": "RULE-DISCOVERED-TRIAGE",
+      "status": "ENFORCED (USER_APPROVED 2026-07-16 by Ofer, gold-review decision recFQgD6cXw1HDo7r)",
+      "tier": "ENFORCED",
+      "file": "global-rules/discovered_artifact_triage_one_touch_20260713.md",
+      "sha256": "d4425f4dd2f4fb5c2f44c651b7055780ede7616881b61295aaa652cfbca24048",
+      "purpose": "2026-07-13 home reconcile: gate.py (Rule Enforcement Kernel v0 — GOLD) sat UNTRACKED on"
+    },
+    {
+      "id": "RULE-PF",
+      "status": "ENFORCED (USER_APPROVED 2026-07-16 by Ofer, gold-review decision recFQgD6cXw1HDo7r)",
+      "tier": "ENFORCED",
+      "file": "global-rules/project_files_not_source_of_truth_rule_20260701.md",
+      "sha256": "b2240e39d6126eec5b389999c8fcfbd84c9496c6669489b54b1c620be8b75bab",
+      "purpose": "Prevent content auto-loaded from **claude.ai Project Files** (files attached to a"
+    },
+    {
+      "id": "RULE-ASK",
+      "status": "ACTIVE / USER_APPROVED 2026-07-16 by Ofer (authored) / PENDING_EXTERNAL_REVIEW",
+      "tier": "ACTIVE",
+      "file": "global-rules/RULE-ASK.md",
+      "sha256": "e928ebdc7789d3a432699bdeb81357dc891d5bccecbece5b6910f519f186c55d",
+      "purpose": "Authored by Ofer 16.07.26, formulated by Claude. Extends the standing \"if you don't understand, ask\" principle. Staged by claude.ai [HOME] 19.07.26, unmerged..."
+    },
+    {
+      "id": "RULE-CHESTERTON",
+      "status": "ACTIVE / canon (Ofer 2026-07-17, packet H2.7) / PENDING claude.ai Project-Instructions side — RULES-SYNC DRIFT / PENDING_EXTERNAL_REVIEW",
+      "tier": "ACTIVE",
+      "file": "global-rules/RULE-CHESTERTON.md",
+      "sha256": "87dd75995594ddb4b154e3c6a24539d9d84edb8650093dfe76fc0649609e8b1f",
+      "purpose": "Canon (Ofer, 2026-07-17). Companion gate to RULE-DESTRUCTIVE. RULE-DESTRUCTIVE"
+    },
+    {
+      "id": "RULE-CLOSEOUT",
+      "status": "ACTIVE_RULE",
+      "tier": "ACTIVE",
+      "file": "rules/closeout_20260513.md",
+      "sha256": "3dfa9ab4026985f5d81f2321d0ef2adf8e225dc71548cc444f229c0cd176a1b5",
+      "purpose": "id: RULE-CLOSEOUT"
+    },
+    {
+      "id": "RULE-CODEX-WINDOW",
+      "status": "ACTIVE TEMPORARY EXECUTION-PREFERENCE RULE",
+      "tier": "ACTIVE",
+      "file": "rules/codex-operating-window-rule-2026-05-12.md",
+      "sha256": "b84f08162f5708fb883806287bb71722e0c34ada1519cf28cb5dbce5fbd412ff",
+      "purpose": "id: RULE-CODEX-WINDOW"
+    },
+    {
+      "id": "RULE-CONTINUATION-ROUTING",
+      "status": "ACTIVE RULE",
+      "tier": "ACTIVE",
+      "file": "rules/continuation-routing-identity-rule-2026-05-12.md",
+      "sha256": "536b79a96af0aa5da68a188748c6e5562ba185161afee1a57026090ea5c5cf9e",
+      "purpose": "id: RULE-CONTINUATION-ROUTING"
+    },
+    {
+      "id": "RULE-CONV-HOOK",
+      "status": "ACTIVE WORKING RULE",
+      "tier": "ACTIVE",
+      "file": "rules/conversation-hook-rule-2026-05-12.md",
+      "sha256": "2cc15ff2f08a9e2273afaf951cbcd1bc6f84843ca781aed03501105c54c43cc8",
+      "purpose": "id: RULE-CONV-HOOK"
+    },
+    {
+      "id": "RULE-DESTRUCTIVE",
+      "status": "ACTIVE / USER_APPROVED 2026-07-15 / PENDING_EXTERNAL_REVIEW",
+      "tier": "ACTIVE",
+      "file": "global-rules/RULE-DESTRUCTIVE.md",
+      "sha256": "d662a3ff63a3786fc1ce2af73e063ded8d8cc0e73cfe5a40ccf4cf1283a57a73",
+      "purpose": "Authored by Ofer 15.07.26, refined by Claude. REPLACES the old blanket prohibition ('Claude never permanently deletes a file, even with explicit approval'). ..."
+    },
+    {
+      "id": "RULE-DRAFT-LOCK",
+      "status": "ACTIVE BEHAVIOR RULE",
+      "tier": "ACTIVE",
+      "file": "rules/draft-lock.md",
+      "sha256": "1cbc7cc640acd1718c7dcd58a2914375993c33482984c5c6abc0375707c19021",
+      "purpose": "id: RULE-DRAFT-LOCK"
+    },
+    {
+      "id": "RULE-DRIFT-MATTER",
+      "status": "ACTIVE_BEHAVIOR_RULE",
+      "tier": "ACTIVE",
+      "file": "rules/drift_to_matter_and_slow_wide_scan_rule_20260517.md",
+      "sha256": "de7883b6d59c50ff5dbce68a4a36d02cb4cc64fd281ccaf5229f0c5c7d0bf8da",
+      "purpose": "id: RULE-DRIFT-MATTER"
+    },
+    {
+      "id": "RULE-ENFORCEMENT-LAYER",
+      "status": "ACTIVE WORKING RULE",
+      "tier": "ACTIVE",
+      "file": "rules/enforcement-vs-behavior-layer-2026-05-15.md",
+      "sha256": "2d306106c44bd27f0dbc876f873b998f96ea43f1408006252b903b73d60c10a9",
+      "purpose": "id: RULE-ENFORCEMENT-LAYER"
+    },
+    {
+      "id": "RULE-GITGATE",
+      "status": "ACTIVE / USER_APPROVED 2026-07-15 / PENDING_EXTERNAL_REVIEW",
+      "tier": "ACTIVE",
+      "file": "global-rules/RULE-GITGATE.md",
+      "sha256": "f84813cd4cfa4918158fc6e6a34c8ba54a3f5c3dcdddc3daaf479dd2e6c5c622",
+      "purpose": "`master` is the only good version. Nothing is canon until merged to master."
+    },
+    {
+      "id": "RULE-GITPUSH-NODEBRIDGE",
+      "status": "ACTIVE / USER_APPROVED 2026-07-19 by Ofer (node-bridge, full scope) and 2026-08-10 by Ofer (ai-cloud-loader, docs/rules only)",
+      "tier": "ACTIVE",
+      "file": "global-rules/RULE-GITPUSH-NODEBRIDGE.md",
+      "sha256": "723f3f4f272c795b2c0b06b541b35191a510af75f522b79ed96fed05e6941d7c",
+      "purpose": "Confirmed by Ofer 19.07.26 (node-bridge, full scope) and extended 10.08.26"
+    },
+    {
+      "id": "RULE-GOODHART",
+      "status": "ACTIVE / canon (Ofer 2026-07-17, packet H2.7) / PENDING claude.ai Project-Instructions side — RULES-SYNC DRIFT / PENDING_EXTERNAL_REVIEW",
+      "tier": "ACTIVE",
+      "file": "global-rules/RULE-GOODHART.md",
+      "sha256": "8cf1f17b3485e8a5d30887fc90f6cd2019e9461aa0fdf3006058773241e7a9a7",
+      "purpose": "Canon (Ofer, 2026-07-17). When a measure becomes the target it stops being a"
+    },
+    {
+      "id": "RULE-HANDOFF",
+      "status": "ACTIVE RULE",
+      "tier": "ACTIVE",
+      "file": "rules/handoff.md",
+      "sha256": "b299b12bb3f00359905d6b716d3f541b7f054b3301349cf3d4003b5cdd23ed3c",
+      "purpose": "id: RULE-HANDOFF"
+    },
+    {
+      "id": "RULE-HANDOFF-PROTOCOL",
+      "status": "ACTIVE / USER_APPROVED 2026-07-18 by Ofer (almost the most important) / PENDING_EXTERNAL_REVIEW",
+      "tier": "ACTIVE",
+      "file": "global-rules/RULE-HANDOFF-PROTOCOL.md",
+      "sha256": "a87119f18ef254e71ec5cc5a379f0868f4096f3a547844ddbf26887e8c5120fb",
+      "purpose": "Authored by Ofer 18.07.26 (\"almost the most important\"). Two parts: how a HANDOFF gets written, and what that writing moment is for. Staged by claude.ai [HOM..."
+    },
+    {
+      "id": "RULE-HRW",
+      "status": "ACTIVE BEHAVIORAL RULE",
+      "tier": "ACTIVE",
+      "file": "rules/human_natural_rewrite_prompts_20260605.md",
+      "sha256": "02e5f611525edd4acd18d935412c8c259b638f7ffaef2e72274efb2e33b976c6",
+      "purpose": "id: RULE-HRW"
+    },
+    {
+      "id": "RULE-INSTRUCTION-SOURCE",
+      "status": "ACTIVE / USER_APPROVED 2026-07-18 by Ofer (clarified; VOIDS earlier framing) / PENDING_EXTERNAL_REVIEW",
+      "tier": "ACTIVE",
+      "file": "global-rules/RULE-INSTRUCTION-SOURCE.md",
+      "sha256": "2f68f6028e3eecc2f9f8dfce6a344b28b1b18082542d8e2ecf8f5f9303bfbb8c",
+      "purpose": "Clarified by Ofer 18.07.26. VOIDS an earlier broken framing. Staged by claude.ai [HOME] 19.07.26, unmerged — see RULE-GITGATE for PR requirement before this ..."
+    },
+    {
+      "id": "RULE-LOCAL-WORKER",
+      "status": "ACTIVE WORKING RULE",
+      "tier": "ACTIVE",
+      "file": "rules/local-worker-vscode-claude-codex-workflow-2026-05-12.md",
+      "sha256": "7103bfef90c1c0fb5cbf478c38e27bfd636be0709032e05dd23e84538cd4a3be",
+      "purpose": "id: RULE-LOCAL-WORKER"
+    },
+    {
+      "id": "RULE-MECH",
+      "status": "ACTIVE / USER_APPROVED 2026-07-15 / PENDING_EXTERNAL_REVIEW",
+      "tier": "ACTIVE",
+      "file": "global-rules/RULE-MECH.md",
+      "sha256": "cb1822967b8e26a163ada7e7a808487142bccaee49b5a19495ae900a418903dc",
+      "purpose": "On EVERY task, before any design, the first question is:"
+    },
+    {
+      "id": "RULE-NAMES",
+      "status": "ACTIVE RULE",
+      "tier": "ACTIVE",
+      "file": "rules/names.md",
+      "sha256": "80af6f49f15a5522626ff83502c2bd76612c3bf41a22f2734d3f4d0f6aecdf97",
+      "purpose": "id: RULE-NAMES"
+    },
+    {
+      "id": "RULE-NULL",
+      "status": "ACTIVE / USER_APPROVED 2026-07-16 by Ofer (authored) / PENDING_EXTERNAL_REVIEW",
+      "tier": "ACTIVE",
+      "file": "global-rules/RULE-NULL.md",
+      "sha256": "bfbd1c56e45059d67d1d996375848495db7be0de8db5c7a0c2727e67e1b2003c",
+      "purpose": "Authored by Ofer 16.07.26, formulated by Claude. Staged by claude.ai [HOME] 19.07.26, unmerged — see RULE-GITGATE for PR requirement before this is canon."
+    },
+    {
+      "id": "RULE-OCC",
+      "status": "ACTIVE (USER_APPROVED 2026-07-16 by Ofer — absorbed into canon; source in office-node\\rules\\ retained)",
+      "tier": "ACTIVE",
+      "file": "global-rules/RULE-OCC_OCCAM_CHECK_SIMPLE_FIRST_EXECUTION_V0.md",
+      "sha256": "5eed0b75f78fbd633722a8144b13139fdf09e5c3160b62eb36c94f819538e25b",
+      "purpose": "`RULE-OCC` — Occam Check / Simple-First Execution"
+    },
+    {
+      "id": "RULE-PRESERVATION-ANCHOR",
+      "status": "ACTIVE REPO ANCHOR",
+      "tier": "ACTIVE",
+      "file": "rules/preservation_vs_execution_anchor.md",
+      "sha256": "ac9f65ef4b42dd3bc28ceb02122cc113475ec51d3c46ff866827ff0ab08e3abf",
+      "purpose": "id: RULE-PRESERVATION-ANCHOR"
+    },
+    {
+      "id": "RULE-PSC",
+      "status": "ACTIVE BEHAVIORAL RULE",
+      "tier": "ACTIVE",
+      "file": "rules/production-sprint-checkpoint-rule-2026-05-15.md",
+      "sha256": "974709cc77ca1d8f9f63bf0b741d1d72217257f1bbea6f66ee95f500e44a1d6a",
+      "purpose": "id: RULE-PSC"
+    },
+    {
+      "id": "RULE-RELAY",
+      "status": "ACTIVE / USER_APPROVED 2026-07-17 by Ofer (pinned, explicit and firm) / PENDING_EXTERNAL_REVIEW",
+      "tier": "ACTIVE",
+      "file": "global-rules/RULE-RELAY.md",
+      "sha256": "0cf9a2838bc715566911107cceb47e3ac9f920f5d7b81e0d098ca7b130567b3a",
+      "purpose": "Pinned by Ofer 17.07.26, explicit and firm requirement. Staged by claude.ai [HOME] 19.07.26; merged to main 21.07.26 in commit `0e66344` (six HOME-staged rul..."
+    },
+    {
+      "id": "RULE-RESEARCH-SYNTHESIS",
+      "status": "ACTIVE / USER_APPROVED 2026-07-21 by Ofer / PENDING_EXTERNAL_REVIEW",
+      "tier": "ACTIVE",
+      "file": "global-rules/RULE-RESEARCH-SYNTHESIS.md",
+      "sha256": "ea8b141dd081b153a12ae5ed4b337eec8ea7b408ddb43f44facf985434879d98",
+      "purpose": "turns them into a decision. All executors."
+    },
+    {
+      "id": "BOOTLOADER_GITHUB_FIRST_RULE",
+      "status": "PENDING_EXTERNAL_REVIEW",
+      "tier": "PROPOSED",
+      "file": "rules/bootloader_github_first.md",
+      "sha256": "0bfc68cabbd992f524700659227911884bad222171ccf17ddb3ccfc3e7054a46",
+      "purpose": "Status: PENDING_EXTERNAL_REVIEW"
+    },
+    {
+      "id": "GATE-S",
+      "status": "PENDING_EXTERNAL_REVIEW",
+      "tier": "PROPOSED",
+      "file": "rules/SOURCE_TRUTH_GATE_20260610.md",
+      "sha256": "657693065e4d22d86a8be048a8fb8c2c3cf12eb447c2dc4212a32c87705d6e53",
+      "purpose": "id: GATE-S"
+    },
+    {
+      "id": "RULE-CHANNELS",
+      "status": "PROPOSED (proposed by Claude Code [HOME] 2026-07-27, GO from claude.ai same day, approved by Ofer 2026-07-27 on all five points plus the sixth routing row; NOT self-certified per RULE-NSRA) / PENDING_EXTERNAL_REVIEW",
+      "tier": "PROPOSED",
+      "file": "global-rules/RULE-CHANNELS.md",
+      "sha256": "bce8605fff261df4239809cf9c052633bd18bd9ca96046e492fe6c49ef15b82e",
+      "purpose": "Proposed by Claude Code [HOME] 27.07.26 (git-archaeology of ai-cloud-loader); GO on all five points from claude.ai the same day, which added the consultation..."
+    },
+    {
+      "id": "RULE-CHANNELS-WORKROUTING",
+      "status": "PROPOSED (written 2026-08-09 by cowork@office, cloud session Desktop-Commander-bound to OfficeNode; NOT self-certified per RULE-NSRA) / PENDING_EXTERNAL_REVIEW",
+      "tier": "PROPOSED",
+      "file": "global-rules/RULE-CHANNELS-WORKROUTING.md",
+      "sha256": "17dc55c08770f0cbb04e12f56bceb93c7f72ac7a7256ebcf30b190eac3b69ec0",
+      "purpose": "Written 2026-08-09 by cowork@office (cloud session, Desktop Commander bound to OfficeNode)."
+    },
+    {
+      "id": "RULE-FEEPOA-PREP",
+      "status": "PROPOSED (drafted by claude.ai [OFFICE then mobile/no-DC] 2026-07-30, first complete run Esther Shefa same day; NOT self-certified per RULE-NSRA) / PENDING_EXTERNAL_REVIEW / MERGED to main 2026-07-30 via PR #99 (13a567f)",
+      "tier": "PROPOSED",
+      "file": "global-rules/client_fee_agreement_poa_prep_rule_20260730.md",
+      "sha256": "84041466b18b5ad2a09317cd978734d42e815641b07457d21f8a7deb79df44a0",
+      "purpose": "תיעודיים: נעמה ברגר (09.07 — הולידה את קיום התבניות), נרקיס (21.07+23.07 — חשפה"
+    },
+    {
+      "id": "RULE-R",
+      "status": "PENDING_EXTERNAL_REVIEW",
+      "tier": "PROPOSED",
+      "file": "rules/REFINERY_PROTOCOL_20260610.md",
+      "sha256": "820b519868c172b8a09f5bd4bb67c997c0fc55ccf9d953902588c13e56fb1da4",
+      "purpose": "id: RULE-R"
+    },
+    {
+      "id": "RULE-RULESLOAD",
+      "status": "PROPOSED / PENDING_EXTERNAL_REVIEW / NOT_SELF_CERTIFIED (authored 2026-09-03 by the session that diagnosed the missing load point; promotion is a separate reviewer's call per RULE-NSRA)",
+      "tier": "PROPOSED",
+      "file": "global-rules/RULE-RULESLOAD.md",
+      "sha256": "d07fae2d92a728e93fb1fcb57d132670683c8c4f88b04f6376540a33b5538780",
+      "purpose": "A rule that is written but never loaded is not a rule. It is a document about a"
+    },
+    {
+      "id": "RULE-SCANINDEX",
+      "status": "PROPOSED / PENDING_EXTERNAL_REVIEW / NOT_SELF_CERTIFIED (per RULE-NSRA — authored by a separate executor session, not the diagnosing session)",
+      "tier": "PROPOSED",
+      "file": "global-rules/scan_residue_index_rule_20260730.md",
+      "sha256": "93315e7f15b0d1074ff162510efdd36a2900e99c1ba801e1ffd51f60f37c4f8d",
+      "purpose": "`sig: inbox recbShXPFGPclVFjk | node: OFFICE | agent: claude-code+claude-opus-4-8 | ts: 2026-07-30`"
+    },
+    {
+      "id": "RULE-SELFRESUME",
+      "status": "PROPOSED (spec by claude.ai [OFFICE] 2026-07-29 in PINNED_TASK rec1D1vbLbvxsOs0U; authored by Claude Code [OFFICE] 2026-07-29; NOT self-certified per RULE-NSRA) / PENDING_EXTERNAL_REVIEW",
+      "tier": "PROPOSED",
+      "file": "global-rules/RULE-SELFRESUME.md",
+      "sha256": "f68f71152b3fd7565ff60d9d5791b286ef8bbabcefa52f3d3a426db29edca61d",
+      "purpose": "Spec authored by claude.ai [OFFICE] 29.07.26 in PINNED_TASK `rec1D1vbLbvxsOs0U` (HIGH); rule text authored and staged by Claude Code [OFFICE] 29.07.26 on bra..."
+    },
+    {
+      "id": "RULE-SESSION-SIGNATURE",
+      "status": "PROPOSED (name pinned by Ofer 2026-07-27; content formulated by Claude, NOT self-certified per RULE-NSRA) / PENDING_EXTERNAL_REVIEW / MERGED to main 2026-07-27 via PR #94",
+      "tier": "PROPOSED",
+      "file": "global-rules/RULE-SESSION-SIGNATURE.md",
+      "sha256": "74a96da7e2f54bea6ea01dab4326abb2ac8f39cb1e03f78a731346ee1458773f",
+      "purpose": "Name pinned by Ofer 27.07.26; content formulated by Claude — PROPOSED, not yet user-approved. Staged by Claude Code [OFFICE] 27.07.26 on branch `claude/rule-..."
+    }
+  ]
+}
