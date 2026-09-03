@@ -1,10 +1,10 @@
 {
   "schema": "acceleration-machine/rules-bundle/v1",
   "canon_repo": "oklawsite-machine/ai-cloud-loader",
-  "canon_commit": "fb21070d4998c21706767e2f7fac4a78d52686c5",
-  "generated_utc": "2026-09-03T13:20:11Z",
-  "registry_signature": "6051c0160d4e4f48b431acc7aa66f31150cec2eceeb85517daf237a99c9b34db",
-  "digest_sha256": "99e2c8494540acd0b596b98fb357c7e1ef71a681196756c748732bd8d055cdd5",
+  "canon_commit": "0b376a1079003b33f64febb226d6ba3282dd70f1",
+  "generated_utc": "2026-09-03T19:03:45Z",
+  "registry_signature": "dfef8cad8b3c533b45436d6b9f794d62ed88858ddd13f6091c7b23e908abe9ef",
+  "digest_sha256": "3dac7cc356c0fd2c740d717b6e267b49f0ac0dccdfb9ad787b7a0717fc633fd0",
   "rule_count": 40,
   "unresolved": [],
   "rules": [
@@ -189,7 +189,7 @@
       "status": "ACTIVE / USER_APPROVED 2026-07-15 / PENDING_EXTERNAL_REVIEW",
       "tier": "ACTIVE",
       "file": "global-rules/RULE-MECH.md",
-      "sha256": "cb1822967b8e26a163ada7e7a808487142bccaee49b5a19495ae900a418903dc",
+      "sha256": "a9be193bf8988085e23343abf7fcaf62d042ad20bbf5f0c52ef98bb4b6283dd9",
       "purpose": "On EVERY task, before any design, the first question is:"
     },
     {

@@ -18,7 +18,7 @@ bundle. It is loaded by reading this block; nothing else is required.
 - **`.rules/` is generated.** Hand edits fail CI and are overwritten on the next
   sync. Change a rule at canon, then re-sync.
 
-Rule-set signature: `6051c0160d4e4f48b431acc7aa66f31150cec2eceeb85517daf237a99c9b34db`
+Rule-set signature: `dfef8cad8b3c533b45436d6b9f794d62ed88858ddd13f6091c7b23e908abe9ef`
 
 A session starting in this repo also runs `.claude/hooks/rules-boot.sh`, which
 prints the non-negotiables and warns when this bundle has drifted from a canon

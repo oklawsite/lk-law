@@ -2,7 +2,7 @@
 
 Generated from `oklawsite-machine/ai-cloud-loader` `RULE_REGISTRY.json`. 40 rules: 4 enforced, 26 active, 10 proposed.
 
-Signature: `6051c0160d4e4f48b431acc7aa66f31150cec2eceeb85517daf237a99c9b34db`
+Signature: `dfef8cad8b3c533b45436d6b9f794d62ed88858ddd13f6091c7b23e908abe9ef`
 
 This digest is generated. It is an index and a summary, never the rule text itself — when a rule decides something, open its canon file. Editing this file by hand does nothing except fail CI.
 
