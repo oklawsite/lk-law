@@ -491,7 +491,17 @@
             .ticker-text { animation: none; }
             .fade-on-scroll, .tab-content, .slide-group.active, .review-group.active { transition: none; animation: none; }
         }
-    </style>
+    /* Accessibility: contrast fixes (WCAG 1.4.3). Decorative gold stays on dark backgrounds. */
+.stat-num, .tab-btn.active, .read-more-btn, .reviewer-details span { color: #8a6a20; }
+.read-more-btn { border-color: #8a6a20; }
+.stat-item strong, .sub-title, .tab-btn { color: #566579; }
+.tab-btn.active { color: #8a6a20; }
+.nav-btn.google { background: #1a5fd0; }
+.nav-btn.google:hover { background: #1a5fd0; text-decoration: underline; }
+.form-notice { font-size: 0.85rem; line-height: 1.7; color: #cbd5e1; margin-top: 15px; text-align: right; }
+.form-notice a { color: #e3c27f; text-decoration: underline; }
+.field-error { color: #ffb4b4; font-size: 0.9rem; margin-top: 6px; }
+</style>
 </head>
 <body id="top">
 <a class="skip-link" href="#main">דלג לתוכן</a>
@@ -795,7 +805,8 @@
                 <input type="text" name="name" autocomplete="name" class="form-input" placeholder="שם מלא" required aria-label="שם מלא">
             </div>
             <div class="form-group">
-                <input type="tel" name="phone" id="phone" autocomplete="tel" inputmode="tel" class="form-input" placeholder="טלפון נייד" required aria-label="טלפון נייד">
+                <input type="tel" name="phone" id="phone" autocomplete="tel" inputmode="tel" class="form-input" placeholder="טלפון נייד" required aria-label="טלפון נייד" aria-describedby="phone-error">
+                <p class="field-error" id="phone-error" role="alert" hidden></p>
             </div>
             <div class="form-group">
                 <input type="email" name="email" autocomplete="email" class="form-input" placeholder="אימייל (לא חובה)" aria-label="כתובת אימייל">
@@ -809,9 +820,9 @@
                 <label for="legal-consent">אני מבין/ה כי הפנייה אינה יוצרת יחסי עו״ד–לקוח</label>
             </div>
 
-            <button type="submit" class="cta-btn" style="width: 100%; border: none; cursor: pointer;">שליחת פנייה לטיפול מיידי</button>
+            <button type="submit" class="cta-btn" style="width: 100%; border: none; cursor: pointer;">שליחת פנייה</button>
             
-            <p class="spam-warning"><i class="fas fa-lock"></i> לא שולחים ספאם. לא משתפים פרטים.</p>
+            <p class="form-notice" id="form-notice">מסירת השם והטלפון נדרשת כדי שנוכל לחזור אליך, ובלעדיה לא נוכל להשיב לפנייה. הדוא"ל ותיאור הנושא הם לבחירתך. נא לא לפרט בטופס מידע רגיש או סודי; נבקש פרטים בשיחה. המידע ישמש למענה לפנייתך בלבד, יועבר אלינו באמצעות ספק שירותי טפסים בארצות הברית (<bdi>Formspree</bdi>) ויישמר אצלנו כל עוד נדרש לטיפול בפנייה ולפי הוראות הדין. זכותך לעיין במידע ולבקש את תיקונו או מחיקתו בפנייה אל <a href="mailto:ofer@lk-law.co.il">Ofer@Lk-Law.co.il</a>. פרטים נוספים ב<a href="privacy.html">מדיניות הפרטיות</a>.</p>
         </form>
     </div>
     <div class="map-wrap">
@@ -856,14 +867,14 @@
     </div>
     <div class="footer-bottom">
         <p>© 2026 כל הזכויות שמורות למשרד עו"ד עופר כגן | O.K Law Office. <br>
-        <a href="terms.html">תקנון האתר</a> | <a href="privacy.html">מדיניות פרטיות</a> | נבנה ועוצב לתוצאות.
+        <a href="terms.html">תנאי שימוש</a> | <a href="privacy.html">מדיניות פרטיות</a> | <a href="accessibility.html">הצהרת נגישות</a> | נבנה ועוצב לתוצאות.
         <br><br>
         <span style="opacity: 0.7; font-size: 0.85rem;">אין באמור באתר התחייבות לתוצאה משפטית. ט.ל.ח.</span>
         </p>
     </div>
 </footer>
 
-<div class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="חזרה לראש העמוד"><i class="fas fa-arrow-up"></i></div>
+<div class="back-to-top" id="backToTop" role="button" tabindex="0" onclick="scrollToTop()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();scrollToTop();}" aria-label="חזרה לראש העמוד"><i class="fas fa-arrow-up"></i></div>
 <a href="https://wa.me/972504084810?text=שלום, אשמח לתיאום שיחת ייעוץ." class="whatsapp-float" target="_blank" rel="noopener" aria-label="צור קשר בוואטסאפ"><i class="fab fa-whatsapp"></i></a>
 
 <script>
@@ -1047,14 +1058,20 @@
     // --- Form Validation (Israeli Phone) ---
     function validateForm() {
         const phoneInput = document.getElementById('phone');
-        const phone = phoneInput.value.replace(/\D/g,''); 
-        const regex = /^05\d{8}$/; 
-
-        if (!regex.test(phone)) {
-            alert("אנא הזן מספר נייד תקין (10 ספרות, מתחיל ב-05)");
+        const err = document.getElementById('phone-error');
+        let d = phoneInput.value.replace(/\D/g, '');
+        if (d.indexOf('972') === 0) { d = '0' + d.slice(3); }
+        const ok = /^05\d{8}$/.test(d) || /^07\d{8}$/.test(d) || /^0[2-489]\d{7}$/.test(d);
+        if (!ok) {
+            err.textContent = 'מספר הטלפון אינו תקין. נא להזין מספר ישראלי, למשל 050-1234567 או 03-1234567.';
+            err.hidden = false;
+            phoneInput.setAttribute('aria-invalid', 'true');
             phoneInput.focus();
             return false;
         }
+        err.hidden = true;
+        err.textContent = '';
+        phoneInput.removeAttribute('aria-invalid');
         return true;
     }
 
