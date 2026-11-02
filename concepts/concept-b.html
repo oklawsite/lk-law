@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="עו&quot;ד עופר כגן - קונספט B: Rotating Moments. משרד בוטיק בהוד השרון: דיני עבודה למעסיקים, ליטיגציה מסחרית, גבייה משפטית ומרכז הגישור.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#09131f">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <title>קונספט B: Rotating Moments | עו"ד עופר כגן - O.K LAW</title>
+
+    <!-- Typography: Heebo (Bold Dynamic Display) & Rubik (Structured Modern Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ==========================================================================
+           CONCEPT B: "ROTATING MOMENTS" - DESIGN SYSTEM & TOKENS
+           Split layout hero, dynamic multi-clip loop, strong display typography,
+           distinct practice cards, WCAG 2.0 AA contrast compliant.
+           ========================================================================== */
+        :root {
+            --bg-canvas: #09131f;
+            --bg-surface: #101d2e;
+            --bg-elevated: #16263b;
+            --bg-card: #132236;
+            
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+
+            /* Accent: Warm radiant amber / ochre */
+            --accent: #e5a93b;            /* On dark (Contrast: 10.4:1) */
+            --accent-hover: #f3be5d;
+            --accent-glow: rgba(229, 169, 59, 0.25);
+            --accent-border: rgba(229, 169, 59, 0.35);
+
+            --border-subtle: rgba(255, 255, 255, 0.09);
+            
+            --font-display: 'Heebo', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Rubik', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            --container-max: 1300px;
+            --transition-smooth: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-canvas);
+            color: var(--text-primary);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Visible Accessible Focus */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -80px;
+            right: 20px;
+            background: var(--accent);
+            color: #09131f;
+            padding: 12px 24px;
+            font-weight: 700;
+            z-index: 9999;
+            text-decoration: none;
+            border-radius: 0 0 6px 6px;
+            transition: top 0.2s ease;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Concept Switcher Ribbon */
+        .concept-meta-bar {
+            background: #04080e;
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 8px 24px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            position: relative;
+            z-index: 1001;
+        }
+        .concept-meta-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .concept-meta-links {
+            display: flex;
+            gap: 14px;
+        }
+        .concept-meta-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .concept-meta-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: rgba(9, 19, 31, 0.95);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 10px 5%;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-bar-contact {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .top-bar-contact a {
+            color: var(--text-primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+        .top-bar-contact a:hover {
+            color: var(--accent);
+        }
+
+        /* Header Navigation */
+        header.site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(9, 19, 31, 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-subtle);
+            transition: var(--transition-smooth);
+        }
+        .header-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .brand-link {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .brand-logo-img {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            background: rgba(229, 169, 59, 0.1);
+            border: 1px solid var(--accent-border);
+            padding: 4px;
+            object-fit: contain;
+        }
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+        }
+        .brand-title {
+            font-family: var(--font-display);
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+        }
+        .brand-sub {
+            font-size: 0.82rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+        .nav-item {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.98rem;
+            padding: 6px 0;
+            position: relative;
+            transition: color 0.2s;
+        }
+        .nav-item:hover,
+        .nav-item.active {
+            color: var(--accent);
+        }
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.25s ease;
+        }
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        .header-btn {
+            background: var(--accent);
+            color: #09131f;
+            padding: 9px 22px;
+            border-radius: 6px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+        }
+        .header-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            padding: 10px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        /* ==========================================================================
+           HERO SECTION: "ROTATING MOMENTS" (SPLIT LAYOUT)
+           50/50 split on desktop: Bold display text + Multi-clip cross-fading loop
+           ========================================================================== */
+        .hero-split {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            min-height: calc(100dvh - 120px);
+            padding: 50px 24px 70px;
+            display: grid;
+            grid-template-columns: 1.05fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-split-text {
+            text-align: right;
+        }
+
+        .hero-lead-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(229, 169, 59, 0.12);
+            color: var(--accent);
+            border: 1px solid var(--accent-border);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .hero-split-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #ffffff;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+            text-wrap: balance;
+        }
+        .hero-split-title span {
+            color: var(--accent);
+        }
+
+        .hero-split-desc {
+            font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 36px;
+            text-wrap: pretty;
+        }
+
+        .hero-split-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+        }
+
+        .btn-primary-b {
+            background: var(--accent);
+            color: #09131f;
+            font-weight: 800;
+            font-size: 1.05rem;
+            padding: 15px 34px;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition-smooth);
+            box-shadow: 0 6px 24px var(--accent-glow);
+        }
+        .btn-primary-b:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-b {
+            background: transparent;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.05rem;
+            padding: 15px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid var(--border-subtle);
+            transition: var(--transition-smooth);
+        }
+        .btn-outline-b:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Split Right: The Rotating Moments Video Frame */
+        .moments-frame-container {
+            position: relative;
+            background: var(--bg-surface);
+            border: 1px solid var(--accent-border);
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+        }
+
+        .moments-viewport {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000000;
+        }
+
+        /* Multiple Clips Simulation / Slots */
+        .moment-clip {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+            pointer-events: none;
+        }
+        .moment-clip.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .moment-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(110%) brightness(88%);
+        }
+
+        /* Animated CSS Fallback Placeholders for the 4 moments */
+        .clip-sim-1 {
+            background: linear-gradient(rgba(9, 19, 31, 0.3), rgba(9, 19, 31, 0.7)),
+                        url('../images/ofer-studio-1.jpg') center 20% / cover no-repeat;
+            filter: grayscale(80%) contrast(115%);
+        }
+        .clip-sim-2 {
+            background: linear-gradient(rgba(9, 19, 31, 0.3), rgba(9, 19, 31, 0.7)),
+                        url('../images/litigation.jpg') center center / cover no-repeat;
+            filter: grayscale(90%) contrast(115%);
+        }
+        .clip-sim-3 {
+            background: linear-gradient(rgba(9, 19, 31, 0.3), rgba(9, 19, 31, 0.7)),
+                        url('../images/labor.jpg') center center / cover no-repeat;
+            filter: grayscale(85%) contrast(115%);
+        }
+        .clip-sim-4 {
+            background: linear-gradient(rgba(9, 19, 31, 0.3), rgba(9, 19, 31, 0.7)),
+                        url('../images/ofer2.jpg') center 20% / cover no-repeat;
+            filter: grayscale(80%) contrast(115%);
+        }
+
+        /* Floating Overlays on Moment Viewport */
+        .moment-info-badge {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: rgba(9, 19, 31, 0.88);
+            border: 1px solid var(--accent-border);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(8px);
+            z-index: 5;
+        }
+
+        .moment-stepper {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 5;
+            background: rgba(9, 19, 31, 0.85);
+            padding: 6px 14px;
+            border-radius: 30px;
+            border: 1px solid var(--border-subtle);
+            backdrop-filter: blur(8px);
+        }
+        .step-pill {
+            width: 28px;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+        }
+        .step-pill.active {
+            width: 44px;
+            background: var(--accent);
+        }
+
+        /* Caption & Spec Card Under Video */
+        .moment-spec-wrap {
+            margin-top: 16px;
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border-subtle);
+        }
+        .moment-caption-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+        .spec-open-btn {
+            background: none;
+            border: 1px solid var(--accent-border);
+            color: var(--accent);
+            font-family: inherit;
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .spec-open-btn:hover {
+            background: rgba(229, 169, 59, 0.12);
+        }
+
+        .spec-content-b {
+            display: none;
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border-subtle);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .spec-content-b.open {
+            display: block;
+        }
+        .spec-moments-list {
+            margin-top: 8px;
+            padding-right: 20px;
+        }
+        .spec-moments-list li {
+            margin-bottom: 6px;
+        }
+
+        /* Section Wrappers */
+        .section-wrap {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+        .section-header {
+            margin-bottom: 48px;
+            text-align: right;
+        }
+        .section-tag {
+            color: var(--accent);
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3.2vw, 2.7rem);
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 14px;
+        }
+        .section-sub {
+            font-size: 1.12rem;
+            color: var(--text-secondary);
+            max-width: 680px;
+        }
+
+        /* Practice Cards: Asymmetric Grid */
+        .cards-grid-b {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+
+        /* Card 1: Dominant Focus - Labor Law for Employers */
+        .card-labor-flagship {
+            grid-column: span 7;
+            background: linear-gradient(135deg, #18283e 0%, #101d2e 100%);
+            border: 1px solid var(--accent-border);
+            border-radius: 14px;
+            padding: 40px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card-badge-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: #09131f;
+            font-size: 0.8rem;
+            font-weight: 800;
+            padding: 4px 14px;
+            border-radius: 4px;
+            width: fit-content;
+            margin-bottom: 18px;
+        }
+        .card-title-lg {
+            font-family: var(--font-display);
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+        .card-text-lg {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        .card-features-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+        .card-features-list li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card-features-list li i {
+            color: var(--accent);
+            font-size: 0.85rem;
+        }
+
+        /* Card 2: Commercial Litigation */
+        .card-litigation {
+            grid-column: span 5;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition-smooth);
+        }
+        .card-litigation:hover {
+            border-color: rgba(229, 169, 59, 0.4);
+            transform: translateY(-4px);
+        }
+
+        /* Card 3: Debt Recovery */
+        .card-debt {
+            grid-column: span 6;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 36px;
+            transition: var(--transition-smooth);
+        }
+        .card-debt:hover {
+            border-color: rgba(229, 169, 59, 0.4);
+            transform: translateY(-4px);
+        }
+
+        /* Card 4: Real Estate */
+        .card-realestate {
+            grid-column: span 6;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 36px;
+            transition: var(--transition-smooth);
+        }
+        .card-realestate:hover {
+            border-color: rgba(229, 169, 59, 0.4);
+            transform: translateY(-4px);
+        }
+
+        .card-item-title {
+            font-family: var(--font-display);
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .card-item-title i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        .card-item-text {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.65;
+        }
+
+        /* About & Credentials Block */
+        .about-split-b {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .about-photo-wrap {
+            position: relative;
+        }
+        .about-photo-wrap img {
+            width: 100%;
+            border-radius: 14px;
+            border: 1px solid var(--border-subtle);
+            display: block;
+        }
+        .about-experience-stamp {
+            position: absolute;
+            bottom: -20px;
+            left: 20px;
+            background: var(--accent);
+            color: #09131f;
+            padding: 16px 24px;
+            border-radius: 10px;
+            font-weight: 900;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+        .about-experience-stamp .num {
+            font-size: 2.2rem;
+            line-height: 1;
+            display: block;
+        }
+        .about-experience-stamp .txt {
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+
+        .about-text-content h3 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            color: #ffffff;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .about-text-content p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        /* Mediation Center: ONLY "מרכז הגישור", Strictly No Partner */
+        .mediation-banner-b {
+            background: linear-gradient(90deg, #101e30 0%, #16273e 100%);
+            border: 1px solid var(--accent-border);
+            border-radius: 16px;
+            padding: 48px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .mediation-banner-b h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 14px;
+        }
+        .mediation-banner-b p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        .mediation-points-b {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .m-point {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        .m-point i {
+            color: var(--accent);
+        }
+
+        /* FAQ Section */
+        .faq-grid-b {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .faq-card-b {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 24px 28px;
+            transition: var(--transition-smooth);
+        }
+        .faq-card-b:hover {
+            border-color: rgba(229, 169, 59, 0.35);
+        }
+        .faq-card-b h4 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .faq-card-b h4 i {
+            color: var(--accent);
+            margin-top: 4px;
+        }
+        .faq-card-b p {
+            color: var(--text-secondary);
+            font-size: 0.96rem;
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact-box-b {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 50px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+        }
+        .form-row-b {
+            margin-bottom: 18px;
+        }
+        .form-row-b label {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .input-b {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        .input-b:focus {
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .disclaimer-check {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+        .disclaimer-check input {
+            margin-top: 4px;
+            accent-color: var(--accent);
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Footer */
+        footer.site-footer {
+            background: #04080e;
+            border-top: 1px solid var(--border-subtle);
+            padding: 60px 24px 30px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .footer-cols {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-cols h4 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+        .footer-cols ul {
+            list-style: none;
+        }
+        .footer-cols li {
+            margin-bottom: 10px;
+        }
+        .footer-cols a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-cols a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom-b {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.85rem;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-dock {
+            position: fixed;
+            bottom: 28px;
+            left: 28px;
+            background: #25D366;
+            color: #ffffff;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.9rem;
+            z-index: 2000;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+        .whatsapp-dock:hover {
+            transform: scale(1.08) rotate(8deg);
+        }
+
+        /* ==========================================================================
+           RESPONSIVE & ACCESSIBILITY
+           ========================================================================== */
+        @media (max-width: 1024px) {
+            .hero-split,
+            .about-split-b,
+            .mediation-banner-b,
+            .contact-box-b,
+            .footer-cols {
+                grid-template-columns: 1fr;
+            }
+            .card-labor-flagship,
+            .card-litigation,
+            .card-debt,
+            .card-realestate {
+                grid-column: span 12;
+            }
+            .faq-grid-b {
+                grid-template-columns: 1fr;
+            }
+            .moments-viewport {
+                height: 380px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--bg-canvas);
+                border-bottom: 1px solid var(--border-subtle);
+                flex-direction: column;
+                padding: 24px;
+                gap: 18px;
+            }
+            .main-nav.active {
+                display: flex;
+            }
+            .hero-split {
+                padding: 30px 16px;
+            }
+            .hero-split-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn-primary-b, .btn-outline-b {
+                width: 100%;
+                justify-content: center;
+            }
+            .card-features-list,
+            .mediation-points-b {
+                grid-template-columns: 1fr;
+            }
+            .contact-box-b {
+                padding: 28px 20px;
+            }
+        }
+
+        /* prefers-reduced-motion: STRICT COMPLIANCE */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto !important;
+            }
+            * {
+                transition: none !important;
+                animation: none !important;
+            }
+            .moment-clip {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+<body id="top">
+
+<a class="skip-link" href="#main-content">דלג לתוכן המרכזי</a>
+
+<!-- Top Concept Switcher Bar -->
+<div class="concept-meta-bar" role="region" aria-label="סרגל קונספטים לעיצוב">
+    <div class="concept-meta-tag">
+        <i class="fas fa-layer-group" aria-hidden="true"></i>
+        <span>קונספט B: Rotating Moments (פריסה מפוצלת, קליפים מתחלפים, כרטיסי התמחות)</span>
+    </div>
+    <div class="concept-meta-links">
+        <a href="index.html"><strong>כל הקונספטים</strong></a> |
+        <a href="concept-a.html">מעבר לקונספט A (The Walk)</a> |
+        <a href="concept-c.html">מעבר לקונספט C (חדר מצב אינטראקטיבי)</a>
+    </div>
+</div>
+
+<!-- Contact Top Bar -->
+<div class="top-bar">
+    <div class="top-bar-contact">
+        <a href="tel:+972774140097" aria-label="התקשר למשרד 077-4140097"><i class="fas fa-phone-alt" aria-hidden="true"></i> 077-4140097</a>
+        <a href="tel:+972504084810" aria-label="התקשר לנייד 050-4084810"><i class="fas fa-mobile-alt" aria-hidden="true"></i> 050-4084810</a>
+        <a href="mailto:ofer@lk-law.co.il" aria-label="שלח דואר אלקטרוני"><i class="fas fa-envelope" aria-hidden="true"></i> ofer@lk-law.co.il</a>
+    </div>
+    <div>
+        <i class="fas fa-location-dot" style="color: var(--accent);" aria-hidden="true"></i>
+        <span>סוקולוב 46, קומה 7, מגדל כיכר המושבה, הוד השרון</span>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+    <div class="header-container">
+        <a href="#top" class="brand-link" aria-label="עורך דין עופר כגן - חזרה לדף הבית">
+            <img src="../images/logo_final.png" alt="לוגו עורך דין עופר כגן" class="brand-logo-img">
+            <div class="brand-text">
+                <span class="brand-title">O.K LAW</span>
+                <span class="brand-sub">עו״ד עופר כגן</span>
+            </div>
+        </a>
+
+        <button class="menu-toggle" onclick="toggleNavMenuB()" aria-label="פתח תפריט ניווט" aria-expanded="false" id="menuToggleBtnB">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <nav class="main-nav" id="mainNavB" aria-label="ניווט ראשי">
+            <a href="#practice-cards" class="nav-item">תחומי התמחות</a>
+            <a href="#labor-flagship" class="nav-item">דיני עבודה למעסיקים</a>
+            <a href="#about-b" class="nav-item">אודות המשרד</a>
+            <a href="#mediation-b" class="nav-item">מרכז הגישור</a>
+            <a href="#faq-b" class="nav-item">שאלות ותשובות</a>
+            <a href="#contact-b" class="header-btn">פנייה ישירה לעו״ד</a>
+        </nav>
+    </div>
+</header>
+
+<main id="main-content">
+
+    <!-- ==========================================================================
+         HERO SECTION: "ROTATING MOMENTS"
+         Split Hero: Strong typography + 4 cross-fading rotating clips
+         ========================================================================== -->
+    <section class="hero-split" aria-label="פתיח - קונספט רגעים מתחלפים">
+        <div class="hero-split-text">
+            <div class="hero-lead-badge">
+                <i class="fas fa-bolt" aria-hidden="true"></i>
+                <span>משפט שמשרת תוצאות עסקיות, לא שעות עבודה</span>
+            </div>
+
+            <h1 class="hero-split-title">
+                מובילים מעסיקים ועסקים <span>לחוף מבטחים</span> משפטי.
+            </h1>
+
+            <p class="hero-split-desc">
+                משרד בוטיק בהוד השרון בליווי עו״ד עופר כגן אישית. התמחות ייחודית בדיני עבודה למעסיקים, ניהול ליטיגציה מסחרית תוקפנית, גביית חובות מורכבים ומרכז הגישור.
+            </p>
+
+            <div class="hero-split-actions">
+                <a href="#contact-b" class="btn-primary-b">
+                    <span>תיאום פגישת אסטרטגיה</span>
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                </a>
+                <a href="#practice-cards" class="btn-outline-b">
+                    <span>כרטיסי התמחות</span>
+                    <i class="fas fa-layer-group" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <!-- Daily Tip from existing site -->
+            <div style="background: rgba(229,169,59,0.06); border-right: 4px solid var(--accent); padding: 12px 18px; border-radius: 4px; font-size: 0.92rem; color: var(--text-secondary);">
+                <strong style="color: var(--accent);">טיפ משפטי שוטף:</strong> תביעה לסכום קצוב (עד 75,000 ₪) מגישים ישירות להוצאה לפועל ללא בית משפט, בתנאי שקיימת ראיה בכתב.
+            </div>
+        </div>
+
+        <!-- Right Side: Rotating Moments Viewport -->
+        <div class="moments-frame-container">
+            <div class="moments-viewport" id="momentsViewport" aria-label="מצגת וידאו: ארבעה רגעים בעבודת עו&quot;ד עופר כגן">
+                
+                <!-- Clip 1: Strategic Case Review -->
+                <div class="moment-clip clip-sim-1 active" id="clip0">
+                    <video class="moment-video" autoplay muted loop playsinline poster="../images/ofer-studio-1.jpg" aria-label="רגע 1: ניתוח תיק במסמכים">
+                        <source src="assets/moment-1-placeholder.mp4" type="video/mp4">
+                        <img src="../images/ofer-studio-1.jpg" alt="עו&quot;ד עופר כגן בניתוח תיק" style="width: 100%; height: 100%; object-fit: cover;">
+                    </video>
+                </div>
+
+                <!-- Clip 2: The Stride to Court -->
+                <div class="moment-clip clip-sim-2" id="clip1">
+                    <video class="moment-video" autoplay muted loop playsinline poster="../images/litigation.jpg" aria-label="רגע 2: הגעה לבית המשפט">
+                        <source src="assets/moment-2-placeholder.mp4" type="video/mp4">
+                        <img src="../images/litigation.jpg" alt="ליטיגציה בבית משפט" style="width: 100%; height: 100%; object-fit: cover;">
+                    </video>
+                </div>
+
+                <!-- Clip 3: Contract Precision -->
+                <div class="moment-clip clip-sim-3" id="clip2">
+                    <video class="moment-video" autoplay muted loop playsinline poster="../images/labor.jpg" aria-label="רגע 3: דיוק בעריכת חוזי עבודה">
+                        <source src="assets/moment-3-placeholder.mp4" type="video/mp4">
+                        <img src="../images/labor.jpg" alt="דיני עבודה וחוזים" style="width: 100%; height: 100%; object-fit: cover;">
+                    </video>
+                </div>
+
+                <!-- Clip 4: Executive Consultation -->
+                <div class="moment-clip clip-sim-4" id="clip3">
+                    <video class="moment-video" autoplay muted loop playsinline poster="../images/ofer2.jpg" aria-label="רגע 4: פגישת ייעוץ אסטרטגית">
+                        <source src="assets/moment-4-placeholder.mp4" type="video/mp4">
+                        <img src="../images/ofer2.jpg" alt="עו&quot;ד עופר כגן בייעוץ" style="width: 100%; height: 100%; object-fit: cover;">
+                    </video>
+                </div>
+
+                <!-- Floating Badge for Current Moment -->
+                <div class="moment-info-badge" id="momentBadge">
+                    <i class="fas fa-circle-play" aria-hidden="true"></i>
+                    <span id="momentBadgeText">רגע 1/4: המבט האסטרטגי (ניתוח תיק)</span>
+                </div>
+
+                <!-- Stepper Pills with Manual Selectors -->
+                <div class="moment-stepper" role="tablist" aria-label="בחירת רגע וידאו">
+                    <button class="step-pill active" onclick="setMoment(0)" aria-label="רגע 1: ניתוח תיק" role="tab" aria-selected="true" id="pill0"></button>
+                    <button class="step-pill" onclick="setMoment(1)" aria-label="רגע 2: הגעה לערכאות" role="tab" aria-selected="false" id="pill1"></button>
+                    <button class="step-pill" onclick="setMoment(2)" aria-label="רגע 3: דיוק חוזי" role="tab" aria-selected="false" id="pill2"></button>
+                    <button class="step-pill" onclick="setMoment(3)" aria-label="רגע 4: ייעוץ אישי" role="tab" aria-selected="false" id="pill3"></button>
+                </div>
+            </div>
+
+            <!-- Single Line Caption and Filming Spec -->
+            <div class="moment-spec-wrap">
+                <div class="moment-caption-row">
+                    <span><i class="fas fa-video" style="color: var(--accent);" aria-hidden="true"></i> <strong>קונספט B:</strong> 4 רגעים קולנועיים במעברים רכים (Cross-fade) המדגישים היבטי עשייה שונים.</span>
+                    <button type="button" class="spec-open-btn" onclick="toggleSpecB()" aria-expanded="false" id="specBtnB">
+                        <i class="fas fa-list-check" aria-hidden="true"></i> מפרט צילום לעופר
+                    </button>
+                </div>
+
+                <div class="spec-content-b" id="specBoxB">
+                    <p><strong>מפרט 4 הקליפים המוצעים לצילום עבור עו״ד כגן:</strong></p>
+                    <ul class="spec-moments-list">
+                        <li><strong>קליפ 1 (המבט האסטרטגי):</strong> עופר ישוב ליד שולחן משרדי עץ אלגנטי, מעיין בתיק מסמכים עבה ומסמן סעיף בעט נובע. 3.5 שניות.</li>
+                        <li><strong>קליפ 2 (צעדי ההכרעה):</strong> הליכה מהירה ובטוחה במסדרון אדריכלי מודרני או מבואת בית המשפט, תיק עור ביד. 3.5 שניות.</li>
+                        <li><strong>קליפ 3 (הדיוק בפרטים):</strong> תקריב (Macro) על חתימה על הסכם עבודה / סגירת תיק חוזה. 3 שניות.</li>
+                        <li><strong>קליפ 4 (ההקשבה והנחישות):</strong> עופר מביט קדימה בהקשבה מלאה, מהנהן בביטחון שקט אל מול הלקוח. 3.5 שניות.</li>
+                        <li><strong>פרמטרים טכניים:</strong> יחס 4:5 או ריבועי 1:1, צבעוניות חמה מאופקת (דסאטורציה 40%), רזולוציה 1080x1350, משקל עד 1.2MB לקליפ (סך הכל פחות מ-4.5MB).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Areas: Cards Grid -->
+    <section class="section-wrap" id="practice-cards" aria-labelledby="practice-heading" style="border-top: 1px solid var(--border-subtle);">
+        <div class="section-header">
+            <span class="section-tag">כרטיסי התמחות</span>
+            <h2 class="section-title" id="practice-heading">עוצמה משפטית בכל חזית</h2>
+            <p class="section-sub">כרטיסי ההתמחות של O.K LAW נבנו במענה ממוקד לאתגרים הקריטיים של המגזר העסקי בישראל.</p>
+        </div>
+
+        <div class="cards-grid-b">
+            <!-- Card 1: Flagship - Labor Law for Employers -->
+            <article class="card-labor-flagship" id="labor-flagship">
+                <div>
+                    <div class="card-badge-top">
+                        <i class="fas fa-crown" aria-hidden="true"></i>
+                        <span>התמחות דגל: הגנה וליווי מעסיקים</span>
+                    </div>
+                    <h3 class="card-title-lg">דיני עבודה – ייצוג מעסיקים ובכירים</h3>
+                    <p class="card-text-lg">
+                        ניהול מערך יחסי העבודה בעסק מתוך ראייה עסקית מונעת סיכונים. אנו מגנים על מעסיקים מול תביעות עובדים מנופחות, מלווים שימועים רגישים ומנסחים הסכמים מוגנים.
+                    </p>
+                    <ul class="card-features-list">
+                        <li><i class="fas fa-shield" aria-hidden="true"></i> הגנה בבתי הדין לעבודה בתביעות שכר ופיטורים</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> עריכת הסכמי סודיות, אי-תחרות והסכמי פרישה</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> ליווי הליכי שימוע וצמצומים על פי הפסיקה העדכנית</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> יישום חוק הגברת האכיפה בדיני עבודה</li>
+                    </ul>
+                </div>
+                <a href="#contact-b" class="btn-primary-b" style="align-self: flex-start;">
+                    <span>תיאום ייעוץ למעסיקים</span>
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                </a>
+            </article>
+
+            <!-- Card 2: Commercial Litigation -->
+            <article class="card-litigation">
+                <div>
+                    <div class="card-item-title">
+                        <span>ליטיגציה מסחרית ומנהלית</span>
+                        <i class="fas fa-gavel" aria-hidden="true"></i>
+                    </div>
+                    <p class="card-item-text">
+                        ייצוג בלתי מתפשר בכל הערכאות: תביעות חוזיות וכספיות, סכסוכי בעלי מניות ושותפים, עתירות מנהליות נגד רשויות מקומיות (כולל ביטול מכרזים פגומים) וצווי מניעה דחופים.
+                    </p>
+                </div>
+                <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-subtle); font-size: 0.9rem; color: var(--accent);">
+                    <i class="fas fa-award" aria-hidden="true"></i> תקדים: ביטול מכרז עיריית קרית מוצקין
+                </div>
+            </article>
+
+            <!-- Card 3: Debt Recovery -->
+            <article class="card-debt">
+                <div class="card-item-title">
+                    <span>גבייה משפטית והוצאה לפועל</span>
+                    <i class="fas fa-coins" aria-hidden="true"></i>
+                </div>
+                <p class="card-item-text">
+                    מחלקה ייעודית לגביית חובות עסקיים: תביעות לסכום קצוב (עד 75,000 ₪) במסלול ישיר להוצל״פ, עיקולים מהירים בטרם אזהרה, מימוש שטרות וצ'קים חוזרים והגנה בחדלות פירעון.
+                </p>
+            </article>
+
+            <!-- Card 4: Real Estate -->
+            <article class="card-realestate">
+                <div class="card-item-title">
+                    <span>נדל״ן, מקרקעין וחוזים</span>
+                    <i class="fas fa-city" aria-hidden="true"></i>
+                </div>
+                <p class="card-item-text">
+                    ליווי עסקאות רכישה ומכר של נכסים מסחריים ופרטיים, חוזי שכירות מורכבים, ליווי מול קבלנים ובנקים, שחרור פרויקטים תקועים בהתחדשות עירונית, וייפוי כוח מתמשך.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section-wrap" id="about-b" aria-labelledby="about-b-heading" style="border-top: 1px solid var(--border-subtle);">
+        <div class="about-split-b">
+            <div class="about-photo-wrap">
+                <img src="../images/ofer-studio-1.jpg" alt="עו&quot;ד עופר כגן - צילום סטודיו" loading="lazy">
+                <div class="about-experience-stamp">
+                    <span class="num">17</span>
+                    <span class="txt">שנות מצוינות משפטית</span>
+                </div>
+            </div>
+
+            <div class="about-text-content">
+                <span class="section-tag">מיקוד אישי • מחויבות מוחלטת</span>
+                <h2 id="about-b-heading">עו״ד עופר כגן: אסטרטגיה מנצחת לחברות ולמעסיקים</h2>
+                <p>
+                    משרד O.K LAW נוסד מתוך תפיסה ברורה: לקוח עסקי אינו צריך עוד משרד ענק שבו התיק מועבר למתמחים זוטרים. אצלנו, כל לקוח וכל סוגיה זוכים לטיפול אישי ומעמיק של עו״ד עופר כגן.
+                </p>
+                <p>
+                    עם ניסיון עשיר של 17 שנה בבתי הדין לעבודה ובערכאות המסחריות, אנו משלבים ידע משפטי מעמיק עם הבנה כלכלית חדה של הצרכים העסקיים שלכם.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mediation Center: ONLY "מרכז הגישור" -->
+    <section class="section-wrap" id="mediation-b" aria-labelledby="mediation-b-heading" style="border-top: 1px solid var(--border-subtle);">
+        <div class="mediation-banner-b">
+            <div>
+                <span class="section-tag">הדרך החכמה ליישוב סכסוכים</span>
+                <h2 id="mediation-b-heading">מרכז הגישור</h2>
+                <p>
+                    פתרון מחלוקות עסקיות, מסחריות ומשפחתיות בדרכי נועם, בדיסקרטיות מוחלטת ובמהירות. חיסכון דרמטי בעלויות משפט ובשנים של מתח.
+                </p>
+                <div class="mediation-points-b">
+                    <div class="m-point"><i class="fas fa-check-circle" aria-hidden="true"></i> גישור מסחרי ועסקי</div>
+                    <div class="m-point"><i class="fas fa-check-circle" aria-hidden="true"></i> סכסוכי נדל״ן ושכירות</div>
+                    <div class="m-point"><i class="fas fa-check-circle" aria-hidden="true"></i> גישור משפחתי וירושות</div>
+                    <div class="m-point"><i class="fas fa-check-circle" aria-hidden="true"></i> שליטה מלאה בתוצאה</div>
+                </div>
+                <a href="https://gishur.law" target="_blank" rel="noopener" class="btn-primary-b">
+                    <span>לאתר מרכז הגישור (gishur.law)</span>
+                    <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div style="background: rgba(9,19,31,0.6); padding: 32px; border-radius: 12px; border: 1px solid var(--border-subtle); text-align: center;">
+                <i class="fas fa-handshake-simple" style="font-size: 3rem; color: var(--accent); margin-bottom: 14px;" aria-hidden="true"></i>
+                <h3 style="font-family: var(--font-display); font-size: 1.3rem; color: #ffffff; margin-bottom: 10px;">למה לבחור בגישור?</h3>
+                <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+                    הסכמה מחייבת בעלת תוקף של פסק דין, שמירה על קשרים מסחריים ואישיים, וסיום הסכסוך בשבועות במקום שנים.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-wrap" id="faq-b" aria-labelledby="faq-b-heading" style="border-top: 1px solid var(--border-subtle);">
+        <div class="section-header">
+            <span class="section-tag">תשובות ישירות</span>
+            <h2 class="section-title" id="faq-b-heading">שאלות נפוצות</h2>
+        </div>
+
+        <div class="faq-grid-b">
+            <div class="faq-card-b">
+                <h4><i class="fas fa-question-circle" aria-hidden="true"></i> מה כולל שירות ריטיינר למעסיקים?</h4>
+                <p>ליווי משפטי שוטף במחיר קבוע. זה כולל זמינות להתייעצויות בזמן אמת, בדיקת חוזי העסקה, טיפול בהליכי שימוע ופיטורים, ומניעת תביעות עבודה יקרות.</p>
+            </div>
+
+            <div class="faq-card-b">
+                <h4><i class="fas fa-question-circle" aria-hidden="true"></i> קיבלתי מכתב התראה לפני תביעה. מה לעשות?</h4>
+                <p>לא להתעלם ולא להגיב רגשית. פנו מיד לייעוץ משפטי מקצועי. תגובה שקולה מונעת לעיתים קרובות את הגשת התביעה או משפרת דרמטית את מעמדכם.</p>
+            </div>
+
+            <div class="faq-card-b">
+                <h4><i class="fas fa-question-circle" aria-hidden="true"></i> האם אתם מטפלים בחובות קטנים ובינוניים?</h4>
+                <p>בהחלט. יש לנו מסלול מהיר לתביעות על סכום קצוב (עד 75,000 ₪) המוגשות ישירות להוצאה לפועל ללא צורך בהתדיינות משפטית ארוכה.</p>
+            </div>
+
+            <div class="faq-card-b">
+                <h4><i class="fas fa-question-circle" aria-hidden="true"></i> מה היתרון של הליך גישור על פני בית משפט?</h4>
+                <p>הליך מהיר, חסכוני ודיסקרטי שבו הצדדים שולטים בתוצאה ומגיעים להסכמה משותפת, במקום פסק דין הנכפה בידי שופט.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section-wrap" id="contact-b" aria-labelledby="contact-b-heading" style="border-top: 1px solid var(--border-subtle);">
+        <div class="section-header">
+            <span class="section-tag">צרו קשר</span>
+            <h2 class="section-title" id="contact-b-heading">תיאום פגישת אסטרטגיה</h2>
+            <p class="section-sub">השאירו פרטים ונחזור אליכם בהקדם לתיאום שיחת ייעוץ ממוקדת.</p>
+        </div>
+
+        <div class="contact-box-b">
+            <div>
+                <form action="https://formspree.io/f/xnjjeykw" method="POST" onsubmit="return validateContactFormB()">
+                    <div class="form-row-b">
+                        <label for="name_b">שם מלא *</label>
+                        <input type="text" id="name_b" name="name" class="input-b" placeholder="ישראל ישראלי" required autocomplete="name">
+                    </div>
+
+                    <div class="form-row-b">
+                        <label for="phone_b">טלפון נייד *</label>
+                        <input type="tel" id="phone_b" name="phone" class="input-b" placeholder="050-0000000" required autocomplete="tel" inputmode="tel">
+                    </div>
+
+                    <div class="form-row-b">
+                        <label for="email_b">אימייל</label>
+                        <input type="email" id="email_b" name="email" class="input-b" placeholder="office@domain.co.il" autocomplete="email">
+                    </div>
+
+                    <div class="form-row-b">
+                        <label for="msg_b">תוכן הפנייה</label>
+                        <textarea id="msg_b" name="message" class="input-b" rows="4" placeholder="תארו בקצרה את הצורך המשפטי (מעסיקים, ליטיגציה, גבייה, גישור)" style="resize: vertical;"></textarea>
+                    </div>
+
+                    <div class="disclaimer-check">
+                        <input type="checkbox" id="legal_consent_b" required>
+                        <label for="legal_consent_b">הפנייה אינה יוצרת יחסי עו״ד–לקוח ונמסרת לתיאום ראשוני בלבד.</label>
+                    </div>
+
+                    <button type="submit" class="btn-primary-b" style="width: 100%; justify-content: center; border: none; cursor: pointer;">
+                        <span>שליחת פנייה לבדיקה</span>
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div style="background: rgba(9,19,31,0.5); padding: 32px; border-radius: 12px; border: 1px solid var(--border-subtle); display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: #ffffff; margin-bottom: 20px;">O.K LAW - עו״ד עופר כגן</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        מגדל כיכר המושבה, רחוב סוקולוב 46, קומה 7, משרד 705, הוד השרון.
+                    </p>
+                    <p style="margin-bottom: 12px;"><strong>טלפון:</strong> <a href="tel:+972774140097" style="color: var(--accent); text-decoration: none;">077-4140097</a></p>
+                    <p style="margin-bottom: 12px;"><strong>וואטסאפ:</strong> <a href="tel:+972504084810" style="color: var(--accent); text-decoration: none;">050-4084810</a></p>
+                    <p style="margin-bottom: 12px;"><strong>אימייל:</strong> <a href="mailto:ofer@lk-law.co.il" style="color: var(--accent); text-decoration: none;">ofer@lk-law.co.il</a></p>
+                </div>
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <a href="https://waze.com/ul?q=Sokolov+46+Hod+Hasharon" target="_blank" rel="noopener" style="flex:1; background: #33ccff; color: #000; text-align: center; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: 700;">Waze</a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Sokolov+46+Hod+Hasharon" target="_blank" rel="noopener" style="flex:1; background: #4285F4; color: #fff; text-align: center; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: 700;">Google Maps</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Floating WhatsApp Action -->
+<a href="https://wa.me/972504084810?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%A2%D7%95%D7%B4%D7%93%20%D7%9B%D7%92%D7%9F%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%99%D7%90%D7%95%D7%9D%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%99%D7%99%D7%A2%D7%95%D7%A5." class="whatsapp-dock" target="_blank" rel="noopener" aria-label="פתח שיחת WhatsApp עם עו&quot;ד עופר כגן">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+<!-- Site Footer -->
+<footer class="site-footer">
+    <div class="footer-cols">
+        <div>
+            <h4>עו״ד עופר כגן | O.K LAW</h4>
+            <p style="line-height: 1.6; color: var(--text-muted);">
+                משרד בוטיק בהוד השרון: דיני עבודה למעסיקים, ליטיגציה מסחרית, גבייה משפטית ומרכז הגישור. 17 שנות ניסיון בהובלת תיקים מורכבים.
+            </p>
+        </div>
+        <div>
+            <h4>ניווט מהיר</h4>
+            <ul>
+                <li><a href="#labor-flagship">דיני עבודה למעסיקים</a></li>
+                <li><a href="#practice-cards">תחומי התמחות</a></li>
+                <li><a href="#about-b">אודות המשרד</a></li>
+                <li><a href="#mediation-b">מרכז הגישור</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>שעות פעילות</h4>
+            <ul>
+                <li>ימים א׳-ה׳: 09:00 - 18:00</li>
+                <li>ימי ו׳: בתיאום מראש</li>
+                <li>סוקולוב 46, קומה 7, הוד השרון</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom-b">
+        <div>
+            © 2026 עו״ד עופר כגן. כל הזכויות שמורות. ט.ל.ח.
+        </div>
+        <div style="display: flex; gap: 16px;">
+            <a href="../terms.html">תקנון</a>
+            <a href="../privacy.html">פרטיות</a>
+            <a href="#top">נגישות (WCAG 2.0 AA)</a>
+            <a href="index.html">מרכז הקונספטים</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Navigation toggle
+    function toggleNavMenuB() {
+        const nav = document.getElementById('mainNavB');
+        const btn = document.getElementById('menuToggleBtnB');
+        const isExpanded = nav.classList.toggle('active');
+        btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+    }
+
+    // Spec box toggle
+    function toggleSpecB() {
+        const box = document.getElementById('specBoxB');
+        const btn = document.getElementById('specBtnB');
+        const isOpen = box.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    // 4 Moments Rotating Loop
+    const momentTitles = [
+        "רגע 1/4: המבט האסטרטגי (ניתוח תיק במסמכים)",
+        "רגע 2/4: צעדי ההכרעה (הליכה לבית המשפט)",
+        "רגע 3/4: הדיוק החוזי (עריכת הסכמי עבודה)",
+        "רגע 4/4: הייעוץ והסמכותיות (מפגש מול לקוח)"
+    ];
+    let currentMomentIdx = 0;
+    let momentTimer = null;
+
+    function setMoment(idx) {
+        currentMomentIdx = idx;
+        for (let i = 0; i < 4; i++) {
+            const clip = document.getElementById('clip' + i);
+            const pill = document.getElementById('pill' + i);
+            if (clip) clip.classList.toggle('active', i === idx);
+            if (pill) {
+                pill.classList.toggle('active', i === idx);
+                pill.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+            }
+        }
+        const badge = document.getElementById('momentBadgeText');
+        if (badge) badge.textContent = momentTitles[idx];
+    }
+
+    function rotateNextMoment() {
+        const nextIdx = (currentMomentIdx + 1) % 4;
+        setMoment(nextIdx);
+    }
+
+    // Respect prefers-reduced-motion: if reduced, do NOT auto-rotate
+    const motionPrefB = window.matchMedia('(prefers-reduced-motion: reduce)');
+    function initMotionB() {
+        if (!motionPrefB.matches) {
+            momentTimer = setInterval(rotateNextMoment, 4200);
+        } else {
+            if (momentTimer) clearInterval(momentTimer);
+            document.querySelectorAll('video').forEach(v => v.pause());
+        }
+    }
+    initMotionB();
+    motionPrefB.addEventListener('change', initMotionB);
+
+    // Form Validation (Israeli Phone)
+    function validateContactFormB() {
+        const phone = document.getElementById('phone_b').value.replace(/\D/g, '');
+        const regex = /^05\d{8}$/;
+        if (!regex.test(phone)) {
+            alert('אנא הזינו מספר טלפון נייד תקין בן 10 ספרות (מתחיל ב-05).');
+            document.getElementById('phone_b').focus();
+            return false;
+        }
+        return true;
+    }
+</script>
+
+</body>
+</html>

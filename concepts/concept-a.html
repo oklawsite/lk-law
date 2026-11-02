@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="עו&quot;ד עופר כגן - קונספט A: The Walk. משרד בוטיק בהוד השרון: דיני עבודה למעסיקים, ליטיגציה מסחרית, גבייה משפטית ומרכז הגישור. 17 שנות ניסיון.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0d1117">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <title>קונספט A: The Walk | עו"ד עופר כגן - O.K LAW</title>
+
+    <!-- Typography: Frank Ruhl Libre (Editorial Serif) & Assistant (Clean Body Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&family=Frank+Ruhl+Libre:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ==========================================================================
+           CONCEPT A: "THE WALK" - DESIGN SYSTEM & TOKENS
+           Editorial rhythm, full-bleed B&W video, restrained bronze/gold accent,
+           WCAG 2.0 AA contrast compliant (all text >= 4.5:1).
+           ========================================================================== */
+        :root {
+            --bg-canvas: #0c0f14;
+            --bg-surface: #141821;
+            --bg-elevated: #1b202c;
+            --bg-card: #181d27;
+            --bg-light: #f8fafc;
+            --surface-light: #ffffff;
+            
+            --text-primary: #f3f5f8;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            
+            --text-dark-primary: #0f172a;
+            --text-dark-secondary: #334155;
+            --text-dark-muted: #64748b;
+
+            /* Accent: Refined champagne bronze / antique gold */
+            --accent: #dfb76c;            /* On dark backgrounds (Contrast: 10.0:1) */
+            --accent-deep: #845e14;       /* On light backgrounds (Contrast: 5.85:1) */
+            --accent-hover: #f0cc85;
+            --accent-border: rgba(223, 183, 108, 0.35);
+
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-light: rgba(15, 23, 42, 0.1);
+            
+            --font-display: 'Frank Ruhl Libre', Georgia, serif;
+            --font-sans: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            
+            --container-max: 1280px;
+            --transition-smooth: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-canvas);
+            color: var(--text-primary);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Visible Accessible Focus */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -80px;
+            right: 20px;
+            background: var(--accent);
+            color: #0c0f14;
+            padding: 12px 24px;
+            font-weight: 700;
+            z-index: 9999;
+            text-decoration: none;
+            border-radius: 0 0 6px 6px;
+            transition: top 0.2s ease;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Concept Badge Bar */
+        .concept-meta-bar {
+            background: #05070a;
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 8px 24px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            z-index: 1001;
+            position: relative;
+        }
+        .concept-meta-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 0.04em;
+        }
+        .concept-meta-links {
+            display: flex;
+            gap: 14px;
+        }
+        .concept-meta-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .concept-meta-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: rgba(12, 15, 20, 0.95);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 10px 5%;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-bar-contact {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .top-bar-contact a {
+            color: var(--text-primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+        .top-bar-contact a:hover {
+            color: var(--accent);
+        }
+        .top-bar-location {
+            color: var(--text-muted);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Sticky Navigation Header */
+        header.site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(12, 15, 20, 0.9);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-subtle);
+            transition: var(--transition-smooth);
+        }
+        .header-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .brand-link {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .brand-mark {
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--accent-border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.25rem;
+            background: rgba(223, 183, 108, 0.05);
+            transition: var(--transition-smooth);
+        }
+        .brand-link:hover .brand-mark {
+            border-color: var(--accent);
+            background: rgba(223, 183, 108, 0.12);
+        }
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+        }
+        .brand-title {
+            font-family: var(--font-display);
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+        }
+        .brand-sub {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        .nav-item {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.98rem;
+            position: relative;
+            padding: 6px 0;
+            transition: color 0.2s;
+        }
+        .nav-item:hover,
+        .nav-item.active {
+            color: var(--accent);
+        }
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.25s ease;
+        }
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        .header-cta-btn {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+        }
+        .header-cta-btn:hover {
+            background: var(--accent);
+            color: #0c0f14;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            padding: 10px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        /* ==========================================================================
+           HERO SECTION: "THE WALK"
+           Full bleed B&W video, editorial typographic hierarchy, restrained accent.
+           ========================================================================== */
+        .hero-walk {
+            position: relative;
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #000000;
+            padding: 100px 24px 60px;
+        }
+
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(115%) brightness(88%);
+        }
+
+        /* CSS-animated motion placeholder when video file is loading/simulated */
+        .hero-walk-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 40%, rgba(30, 36, 48, 0.45) 0%, rgba(10, 13, 18, 0.95) 85%),
+                        url('../images/ofer-studio-1.jpg') center 25% / cover no-repeat;
+            filter: grayscale(100%) contrast(120%) brightness(75%);
+            animation: slowPan 16s ease-in-out infinite alternate;
+            z-index: 1;
+        }
+        @keyframes slowPan {
+            0% { transform: scale(1.0) translateY(0); }
+            100% { transform: scale(1.05) translateY(-2%); }
+        }
+
+        /* Cinematic vignettes and lighting overlays */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, 
+                rgba(12, 15, 20, 0.85) 0%, 
+                rgba(12, 15, 20, 0.4) 40%, 
+                rgba(12, 15, 20, 0.85) 80%,
+                rgba(12, 15, 20, 1.0) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 980px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-tagline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            background: rgba(223, 183, 108, 0.08);
+            border: 1px solid var(--accent-border);
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+            line-height: 1.14;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-wrap: balance;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-desc {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            color: var(--text-secondary);
+            max-width: 760px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
+            text-wrap: pretty;
+            font-weight: 400;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #0c0f14;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 15px 36px;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid var(--accent);
+            transition: var(--transition-smooth);
+            box-shadow: 0 4px 20px rgba(223, 183, 108, 0.25);
+        }
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(223, 183, 108, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.05rem;
+            padding: 15px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid var(--border-subtle);
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(8px);
+        }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Video Caption & Filming Spec Card */
+        .hero-video-info-wrap {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 18px 24px;
+            background: rgba(16, 21, 30, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            text-align: right;
+        }
+        .hero-caption {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .hero-caption-text {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .hero-caption-text i {
+            color: var(--accent);
+        }
+        .spec-toggle-btn {
+            background: none;
+            border: 1px solid var(--accent-border);
+            color: var(--accent);
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-family: inherit;
+        }
+        .spec-toggle-btn:hover {
+            background: rgba(223, 183, 108, 0.12);
+        }
+
+        .filming-spec-details {
+            display: none;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-subtle);
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .filming-spec-details.open {
+            display: block;
+        }
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .spec-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 10px 14px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .spec-label {
+            color: var(--accent);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 2px;
+            font-size: 0.82rem;
+        }
+
+        /* Metric Bar (Editorial Rhythm) */
+        .editorial-metrics {
+            max-width: var(--container-max);
+            margin: -30px auto 40px;
+            position: relative;
+            z-index: 10;
+            padding: 0 24px;
+        }
+        .metrics-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 32px 40px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+        }
+        .metric-col {
+            text-align: right;
+            border-right: 1px solid var(--border-subtle);
+            padding-right: 30px;
+        }
+        .metric-col:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+        .metric-num {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .metric-label {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        .metric-sub {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Section Layouts */
+        .section-wrap {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+        .section-header {
+            margin-bottom: 48px;
+            text-align: right;
+        }
+        .section-lead-tag {
+            color: var(--accent);
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 14px;
+        }
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 680px;
+            line-height: 1.6;
+        }
+
+        /* Practice Areas: Asymmetric Editorial Grid */
+        .services-editorial-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 1fr;
+            gap: 28px;
+        }
+        .service-highlight-card {
+            background: linear-gradient(145deg, #18202d 0%, #10151f 100%);
+            border: 1px solid var(--accent-border);
+            border-radius: 12px;
+            padding: 44px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .badge-priority {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            background: var(--accent);
+            color: #0c0f14;
+            font-size: 0.8rem;
+            font-weight: 800;
+            padding: 4px 14px;
+            border-radius: 4px;
+            letter-spacing: 0.04em;
+        }
+        .service-number {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .service-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 18px;
+            line-height: 1.25;
+        }
+        .service-text {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        .service-bullets {
+            list-style: none;
+            margin-bottom: 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 18px;
+        }
+        .service-bullets li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .service-bullets li i {
+            color: var(--accent);
+            margin-top: 4px;
+            font-size: 0.85rem;
+        }
+
+        .services-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .service-card-compact {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 28px;
+            transition: var(--transition-smooth);
+        }
+        .service-card-compact:hover {
+            border-color: rgba(223, 183, 108, 0.4);
+            transform: translateX(-4px);
+            background: var(--bg-elevated);
+        }
+        .service-card-compact h3 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .service-card-compact h3 i {
+            font-size: 1rem;
+            color: var(--accent);
+        }
+        .service-card-compact p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about-editorial-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-portrait-box {
+            position: relative;
+        }
+        .about-portrait-box img {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+            border: 1px solid var(--border-subtle);
+            filter: grayscale(15%) contrast(105%);
+        }
+        .portrait-caption-tag {
+            position: absolute;
+            bottom: -16px;
+            right: 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--accent-border);
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .about-editorial-text h3 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            line-height: 1.25;
+        }
+        .about-editorial-text p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+        .quote-callout {
+            border-right: 3px solid var(--accent);
+            padding: 16px 24px 16px 0;
+            margin: 28px 0;
+            background: rgba(223, 183, 108, 0.04);
+            border-radius: 0 6px 6px 0;
+        }
+        .quote-callout p {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: #ffffff;
+            font-style: italic;
+            margin-bottom: 6px;
+        }
+        .quote-callout span {
+            font-size: 0.88rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Achievements: Selected Precedents */
+        .precedents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+        .precedent-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition-smooth);
+        }
+        .precedent-card:hover {
+            border-color: rgba(223, 183, 108, 0.35);
+            background: var(--bg-elevated);
+        }
+        .precedent-forum {
+            font-size: 0.82rem;
+            color: var(--accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+        .precedent-title {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+            line-height: 1.35;
+        }
+        .precedent-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.65;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        .precedent-link {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.2s;
+        }
+        .precedent-link:hover {
+            gap: 12px;
+            color: var(--accent-hover);
+        }
+
+        /* Mediation Center (מרכז הגישור) - Strictly No Partner, Only "מרכז הגישור" */
+        .mediation-module {
+            background: radial-gradient(circle at 100% 0%, rgba(223, 183, 108, 0.08) 0%, transparent 60%),
+                        var(--bg-surface);
+            border: 1px solid var(--accent-border);
+            border-radius: 14px;
+            padding: 50px;
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .mediation-module h3 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+        .mediation-module p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        .mediation-pillars {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+        .pillar-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        .pillar-item i {
+            color: var(--accent);
+        }
+
+        /* FAQ Section */
+        .faq-accordion {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .faq-item-a {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            margin-bottom: 14px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+        .faq-item-a[open] {
+            border-color: var(--accent-border);
+            background: var(--bg-elevated);
+        }
+        .faq-question-btn {
+            width: 100%;
+            padding: 22px 28px;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-align: right;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+        .faq-icon {
+            color: var(--accent);
+            transition: transform 0.28s ease;
+        }
+        .faq-item-a[open] .faq-icon {
+            transform: rotate(180deg);
+        }
+        .faq-body {
+            padding: 0 28px 24px;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        /* Contact Section */
+        .contact-wrap-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 40px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            overflow: hidden;
+        }
+        .contact-form-side {
+            padding: 50px;
+        }
+        .contact-info-side {
+            background: #0a0e14;
+            padding: 50px;
+            border-right: 1px solid var(--border-subtle);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .form-group-a {
+            margin-bottom: 20px;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .form-input-a {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        .form-input-a:focus {
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.07);
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 22px 0;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+        .checkbox-container input {
+            margin-top: 4px;
+            accent-color: var(--accent);
+            width: 18px;
+            height: 18px;
+        }
+        .btn-submit {
+            width: 100%;
+            background: var(--accent);
+            color: #0c0f14;
+            font-family: inherit;
+            font-size: 1.05rem;
+            font-weight: 700;
+            padding: 15px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        .btn-submit:hover {
+            background: var(--accent-hover);
+        }
+
+        .office-contact-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+        .office-contact-list li {
+            margin-bottom: 22px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .office-contact-list li i {
+            color: var(--accent);
+            font-size: 1.15rem;
+            margin-top: 4px;
+        }
+        .contact-entry-title {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            display: block;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+        }
+        .office-contact-list a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+        .office-contact-list a:hover {
+            color: var(--accent);
+        }
+        .maps-action-btns {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .btn-map-action {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn-map-action.waze {
+            background: #33ccff;
+            color: #000000;
+        }
+        .btn-map-action.google {
+            background: #4285F4;
+            color: #ffffff;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-dock {
+            position: fixed;
+            bottom: 28px;
+            left: 28px;
+            background: #25D366;
+            color: #ffffff;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.9rem;
+            z-index: 2000;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+        .whatsapp-dock:hover {
+            transform: scale(1.08) rotate(8deg);
+        }
+
+        /* Footer */
+        footer.site-footer {
+            background: #06080c;
+            border-top: 1px solid var(--border-subtle);
+            padding: 60px 24px 30px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .footer-inner {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 {
+            font-family: var(--font-display);
+            color: #ffffff;
+            font-size: 1.15rem;
+            margin-bottom: 16px;
+        }
+        .footer-links-list {
+            list-style: none;
+        }
+        .footer-links-list li {
+            margin-bottom: 10px;
+        }
+        .footer-links-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-links-list a:hover {
+            color: var(--accent);
+        }
+        .footer-legal-bar {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.85rem;
+        }
+        .footer-legal-links {
+            display: flex;
+            gap: 18px;
+        }
+        .footer-legal-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+        .footer-legal-links a:hover {
+            color: var(--accent);
+        }
+
+        /* ==========================================================================
+           RESPONSIVE & ACCESSIBILITY MEDIA QUERIES
+           ========================================================================== */
+        @media (max-width: 1024px) {
+            .services-editorial-grid,
+            .about-editorial-wrap,
+            .mediation-module,
+            .contact-wrap-grid,
+            .metrics-card,
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+            .metric-col {
+                border-right: none;
+                border-bottom: 1px solid var(--border-subtle);
+                padding-right: 0;
+                padding-bottom: 20px;
+            }
+            .metric-col:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+            .contact-info-side {
+                border-right: none;
+                border-top: 1px solid var(--border-subtle);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--bg-canvas);
+                border-bottom: 1px solid var(--border-subtle);
+                flex-direction: column;
+                padding: 24px;
+                gap: 18px;
+            }
+            .main-nav.active {
+                display: flex;
+            }
+            .hero-walk {
+                padding-top: 80px;
+                min-height: 92dvh;
+            }
+            .hero-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+            .service-highlight-card {
+                padding: 28px;
+            }
+            .service-bullets {
+                grid-template-columns: 1fr;
+            }
+            .mediation-pillars {
+                grid-template-columns: 1fr;
+            }
+            .contact-form-side,
+            .contact-info-side {
+                padding: 28px 20px;
+            }
+        }
+
+        /* prefers-reduced-motion: STRICT COMPLIANCE */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto !important;
+            }
+            .hero-walk-placeholder {
+                animation: none !important;
+            }
+            * {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+<body id="top">
+
+<a class="skip-link" href="#main-content">דלג לתוכן המרכזי</a>
+
+<!-- Top Concept Switcher Bar -->
+<div class="concept-meta-bar" role="region" aria-label="סרגל קונספטים לעיצוב">
+    <div class="concept-meta-tag">
+        <i class="fas fa-compass" aria-hidden="true"></i>
+        <span>קונספט A: The Walk (שחור-לבן קולנועי, טיפוגרפיה מאופקת)</span>
+    </div>
+    <div class="concept-meta-links">
+        <a href="index.html"><strong>כל הקונספטים</strong></a> |
+        <a href="concept-b.html">מעבר לקונספט B (רגעים מתחלפים)</a> |
+        <a href="concept-c.html">מעבר לקונספט C (חדר מצב אינטראקטיבי)</a>
+    </div>
+</div>
+
+<!-- Contact Top Bar -->
+<div class="top-bar">
+    <div class="top-bar-contact">
+        <a href="tel:+972774140097" aria-label="התקשר למשרד 077-4140097"><i class="fas fa-phone-alt" aria-hidden="true"></i> 077-4140097</a>
+        <a href="tel:+972504084810" aria-label="התקשר לנייד 050-4084810"><i class="fas fa-mobile-alt" aria-hidden="true"></i> 050-4084810</a>
+        <a href="mailto:ofer@lk-law.co.il" aria-label="שלח דואר אלקטרוני"><i class="fas fa-envelope" aria-hidden="true"></i> ofer@lk-law.co.il</a>
+    </div>
+    <div class="top-bar-location">
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+        <span>סוקולוב 46 (מגדל כיכר המושבה), קומה 7, הוד השרון</span>
+    </div>
+</div>
+
+<!-- Header & Nav -->
+<header class="site-header">
+    <div class="header-container">
+        <a href="#top" class="brand-link" aria-label="חזרה לראש העמוד - עורך דין עופר כגן">
+            <div class="brand-mark">
+                <i class="fas fa-scale-balanced" aria-hidden="true"></i>
+            </div>
+            <div class="brand-text">
+                <span class="brand-title">O.K LAW</span>
+                <span class="brand-sub">עו״ד עופר כגן</span>
+            </div>
+        </a>
+
+        <button class="menu-toggle" onclick="toggleNavMenu()" aria-label="פתח תפריט ניווט" aria-expanded="false" id="menuToggleBtn">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <nav class="main-nav" id="mainNav" aria-label="ניווט ראשי">
+            <a href="#services" class="nav-item">תחומי התמחות</a>
+            <a href="#labor-employers" class="nav-item">דיני עבודה למעסיקים</a>
+            <a href="#about" class="nav-item">אודות המשרד</a>
+            <a href="#precedents" class="nav-item">הישגים ותקדימים</a>
+            <a href="#mediation" class="nav-item">מרכז הגישור</a>
+            <a href="#faq" class="nav-item">שאלות נפוצות</a>
+            <a href="#contact" class="header-cta-btn">ייעוץ אסטרטגי</a>
+        </nav>
+    </div>
+</header>
+
+<main id="main-content">
+
+    <!-- ==========================================================================
+         HERO SECTION: "THE WALK"
+         Full-bleed black and white video hero with static fallback and video spec
+         ========================================================================== -->
+    <section class="hero-walk" aria-label="פתיח - עורך דין עופר כגן">
+        <div class="hero-video-container">
+            <!-- Simulated CSS-animated neutral placeholder for development -->
+            <div class="hero-walk-placeholder" id="walkPlaceholder" aria-hidden="true"></div>
+            
+            <!-- Video slot for Ofer's filmed walk loop -->
+            <video class="hero-video" id="heroVideo" autoplay muted loop playsinline poster="../images/ofer-studio-1.jpg" aria-label="וידאו רקע שחור-לבן: עו&quot;ד עופר כגן בהליכה אסטרטגית">
+                <source src="assets/the-walk-placeholder.mp4" type="video/mp4">
+                <!-- Static image fallback -->
+                <img src="../images/ofer-studio-1.jpg" alt="עו&quot;ד עופר כגן" class="hero-fallback-img">
+            </video>
+        </div>
+
+        <div class="hero-overlay" aria-hidden="true"></div>
+
+        <div class="hero-content">
+            <div class="hero-tagline">
+                <i class="fas fa-shield-halved" aria-hidden="true"></i>
+                <span>17 שנות מצוינות בליטיגציה ומשפט מסחרי</span>
+            </div>
+
+            <h1 class="hero-title">חשיבה אסטרטגית.<br>תוצאות מוכחות בשטח.</h1>
+
+            <p class="hero-desc">
+                משרד בוטיק בהוד השרון לחברות, אנשי עסקים ומעסיקים. מעטפת ליווי הדוקה בדיני עבודה למעסיקים, ליטיגציה מסחרית מורכבת, גבייה משפטית ופתרון סכסוכים בדיסקרטיות.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#contact" class="btn-primary">
+                    <span>תיאום פגישת אסטרטגיה</span>
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                </a>
+                <a href="#services" class="btn-secondary">
+                    <span>תחומי עיסוק וייצוג</span>
+                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <!-- Single Line Caption & Filming Spec Toggle -->
+            <div class="hero-video-info-wrap">
+                <div class="hero-caption">
+                    <span class="hero-caption-text">
+                        <i class="fas fa-video" aria-hidden="true"></i>
+                        <span>סרטון רקע מוצע: הליכה מדודה ובטוחה בשחור-לבן (The Walk). להלן מפרט הצילום המומלץ:</span>
+                    </span>
+                    <button type="button" class="spec-toggle-btn" onclick="toggleFilmingSpec()" aria-expanded="false" id="specToggleBtn">
+                        <i class="fas fa-sliders" aria-hidden="true"></i> צפה במפרט הצילום לעופר
+                    </button>
+                </div>
+
+                <div class="filming-spec-details" id="filmingSpecBox">
+                    <p><strong>מפרט הצילום המומלץ עבור עו״ד עופר כגן (קונספט A):</strong></p>
+                    <div class="spec-grid">
+                        <div class="spec-item">
+                            <span class="spec-label">אורך וסגנון</span>
+                            6–8 שניות בלולאה רציפה (Seamless Loop), הליכה טבעית ואיטית לקראת המצלמה.
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">מסגור ותאורה</span>
+                            צילום גוף מלא או 3/4 (Dolly / Gimbal), תאורת מפתח רכה עם הדגשת קווי מתאר אדריכליים.
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">צבעוניות (Look)</span>
+                            שחור-לבן קונטרסטי, גווני אפור עמוקים ללא רוויה, לבוש בחליפה כהה מחויטת.
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">רזולוציה ויחס מסך</span>
+                            1920x1080 (16:9) לדסקטופ; חיתוך מותאם 1080x1920 (9:16) למובייל. 24fps.
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">משקל ופורמט קובץ</span>
+                            עד 3.2MB לדסקטופ ו-1.6MB למובייל (H.264 MP4 / WebM, ללא ערוץ אודיו).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Bar -->
+    <div class="editorial-metrics" role="region" aria-label="נתוני פעילות המשרד">
+        <div class="metrics-card">
+            <div class="metric-col">
+                <span class="metric-num">17+</span>
+                <div class="metric-label">שנות ניסיון בחזית המשפט</div>
+                <div class="metric-sub">ניהול מאבקים מורכבים בערכאות השיפוט</div>
+            </div>
+            <div class="metric-col">
+                <span class="metric-num">1,000+</span>
+                <div class="metric-label">תיקים ולקוחות עסקיים</div>
+                <div class="metric-sub">ליווי חברות, מעסיקים ועסקים מובילים</div>
+            </div>
+            <div class="metric-col">
+                <span class="metric-num">100%</span>
+                <div class="metric-label">מעורבות אישית של עו״ד כגן</div>
+                <div class="metric-sub">בניית אסטרטגיה קפדנית ללא העברה לגורמים זוטרים</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Practice Areas -->
+    <section class="section-wrap" id="services" aria-labelledby="services-heading">
+        <div class="section-header">
+            <span class="section-lead-tag">תחומי התמחות ומעטפת מקצועית</span>
+            <h2 class="section-title" id="services-heading">שליטה בכללי המשחק. ראייה עסקית חדה.</h2>
+            <p class="section-subtitle">משרד O.K LAW מתמקד בארבעה תחומי ליבה משפטיים, תוך שילוב בין הגנה קשוחה בבית המשפט למניעת סיכונים שקטה במשרד.</p>
+        </div>
+
+        <div class="services-editorial-grid">
+            <!-- Highlighted: Labor Law for Employers -->
+            <article class="service-highlight-card" id="labor-employers">
+                <span class="badge-priority"><i class="fas fa-briefcase" aria-hidden="true"></i> מומחיות מרכזית</span>
+                <div>
+                    <span class="service-number">01 / דיני עבודה</span>
+                    <h3 class="service-title">דיני עבודה וייצוג מעסיקים ובכירים</h3>
+                    <p class="service-text">
+                        מומחיות ייחודית בניהול יחסי עבודה קיבוציים ואישיים, בדגש על מניעת חשיפות כספיות וייצוג מעסיקים בבתי הדין לעבודה. ליווי שוטף החוסך תביעות יקרות של מאות אלפי שקלים.
+                    </p>
+                    <ul class="service-bullets">
+                        <li><i class="fas fa-check" aria-hidden="true"></i> עריכת הסכמי העסקה מותאמים וסודיות</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> ליווי שימועים ופיטורין ללא חשיפות</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> הגנה בתביעות שעות נוספות והפרשי שכר</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> יישום חוק הגברת האכיפה בדיני עבודה</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> טיפול מוסמך בסוגיות הטרדה מינית בעבודה</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> ניהול מו״מ מול עובדים בכירים בעת פרישה</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="btn-primary" style="align-self: flex-start;">
+                    <span>התייעצות מיידית בנושא מעסיקים</span>
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                </a>
+            </article>
+
+            <!-- Other Practice Areas Stack -->
+            <div class="services-stack">
+                <article class="service-card-compact">
+                    <span class="service-number">02 / ליטיגציה</span>
+                    <h3>ליטיגציה מסחרית ומשפט מנהלי <i class="fas fa-gavel" aria-hidden="true"></i></h3>
+                    <p>ניהול תביעות כספיות מורכבות, סכסוכי שותפים, עתירות מנהליות נגד רשויות מקומיות, צווי מניעה ותביעות לשון הרע להגנה על המוניטין.</p>
+                </article>
+
+                <article class="service-card-compact">
+                    <span class="service-number">03 / גבייה והוצל״פ</span>
+                    <h3>גבייה משפטית והוצאה לפועל <i class="fas fa-file-invoice-dollar" aria-hidden="true"></i></h3>
+                    <p>מערך גבייה תקיף וממוקד למימוש שטרות ופסקי דין, תביעות לסכום קצוב עד 75,000 ₪ בהליך מהיר, עיקולים דחופים והגנה בחדלות פירעון.</p>
+                </article>
+
+                <article class="service-card-compact">
+                    <span class="service-number">04 / מקרקעין</span>
+                    <h3>נדל״ן, מקרקעין וחוזים <i class="fas fa-building" aria-hidden="true"></i></h3>
+                    <p>ליווי עסקאות מכר ורכישת נכסים מסחריים ומגורים, חוזי שכירות מורכבים, ליווי מול רשויות תכנון ובנקים, ועריכת ייפוי כוח מתמשך.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section-wrap" id="about" aria-labelledby="about-heading" style="border-top: 1px solid var(--border-subtle);">
+        <div class="about-editorial-wrap">
+            <div class="about-portrait-box">
+                <picture>
+                    <source srcset="../images/ofer-studio-1.webp" type="image/webp">
+                    <img src="../images/ofer-studio-1.jpg" alt="עורך דין עופר כגן - סטודיו הוד השרון" width="800" height="1200" loading="lazy">
+                </picture>
+                <div class="portrait-caption-tag">
+                    עו״ד עופר כגן • מייסד המשרד
+                </div>
+            </div>
+
+            <div class="about-editorial-text">
+                <span class="section-lead-tag">פרופיל אישי וערכים</span>
+                <h2 class="section-title" id="about-heading">הכוח המשפטי שלך ברגע המכריע</h2>
+                
+                <p>
+                    בעולם משפטי מורכב ודינמי, הניסיון והשקט הנפשי הם הנכס החזק ביותר. עם למעלה מ-17 שנים בחזית הליטיגציה ובתי הדין לעבודה, עו״ד עופר כגן מביא עמו הבנה עסקית חריפה, היכרות מעמיקה עם המערכת המשפטית ויכולת מוכחת לפתור משברים סבוכים.
+                </p>
+
+                <p>
+                    המשרד, הממוקם במגדל ״כיכר המושבה״ בהוד השרון, מעניק שירותי מעטפת מלאה (One-Stop Shop) למעסיקים ולחברות. אנו מאמינים בגישה אסטרטגית מונעת: לבנות את המסגרת המשפטית הנכונה מראש כדי לא להיגרר להליכים מיותרים, אך להילחם בנחישות ללא פשרות כשמגיעים לאולם הדיונים.
+                </p>
+
+                <div class="quote-callout">
+                    <p>״משפט מוצלח אינו נמדד במספר הדפים שנוסחו, אלא בדיוק המטרה ובשקט שהוא מחזיר ללקוח.״</p>
+                    <span>— עו״ד עופר כגן</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selected Precedents & Achievements -->
+    <section class="section-wrap" id="precedents" aria-labelledby="precedents-heading" style="border-top: 1px solid var(--border-subtle);">
+        <div class="section-header">
+            <span class="section-lead-tag">רקורד תוצאות מוכח</span>
+            <h2 class="section-title" id="precedents-heading">פסקי דין והישגים בולטים</h2>
+            <p class="section-subtitle">עובדות מהשטח: הצלחות תקדימיות בבתי הדין לעבודה, בעתירות מנהליות ובבתי המשפט האזרחיים.</p>
+        </div>
+
+        <div class="precedents-grid">
+            <article class="precedent-card">
+                <div>
+                    <span class="precedent-forum">בית המשפט לעניינים מנהליים • עתירה</span>
+                    <h3 class="precedent-title">ביטול מכרז עירייה בשל פגמים וחשד להטיה</h3>
+                    <p class="precedent-desc">
+                        הצלחה מלאה בעתירה מנהלית: בית המשפט עצר וביטל מכרז ציבורי של עיריית קרית מוצקין עקב פגמים מהותיים בהליך וחוסר תום לב מול המתמודדים.
+                    </p>
+                </div>
+                <a href="http://www.psakdin.co.il/Document/%D7%94%D7%90%D7%9D-%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA-%D7%A7%D7%A8%D7%99%D7%AA-%D7%9E%D7%95%D7%A6%D7%A7%D7%99%D7%9F-%D7%A0%D7%99%D7%A1%D7%AA%D7%94-%D7%9C%D7%94%D7%98%D7%95%D7%AA-%D7%9E%D7%9B%D7%A8%D7%96#.Vbc8jLNViko" target="_blank" rel="noopener" class="precedent-link">
+                    <span>סיקור בפסקדין</span>
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                </a>
+            </article>
+
+            <article class="precedent-card">
+                <div>
+                    <span class="precedent-forum">בית הדין לעבודה • תקדים</span>
+                    <h3 class="precedent-title">פיצויים מוגדלים לפיטורי עובדת בהריון</h3>
+                    <p class="precedent-desc">
+                        פסק דין תקדימי בבית הדין לעבודה: פסיקת פיצויים משמעותיים והוצאות בגין פיטורי עובדת ללא קבלת היתר מהממונה על חוק עבודת נשים.
+                    </p>
+                </div>
+                <a href="http://www.ynet.co.il/articles/0,7340,L-4566466,00.html" target="_blank" rel="noopener" class="precedent-link">
+                    <span>סיקור ב-Ynet</span>
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                </a>
+            </article>
+
+            <article class="precedent-card">
+                <div>
+                    <span class="precedent-forum">הליך פלילי-עסקי • רישוי עסקים</span>
+                    <h3 class="precedent-title">זיכוי פלילי מלא לפאב ״דבלין״</h3>
+                    <p class="precedent-desc">
+                        ניצחון בבית המשפט: זיכוי מלא של בית העסק מאישומי הפרת החוק למניעת עישון, לאחר הוכחת אכיפה פנימית סבירה והתנהלות כדין.
+                    </p>
+                </div>
+                <a href="http://www.psakdin.co.il/Document/%D7%A4%D7%A7%D7%97%D7%99%D7%9D-%D7%AA%D7%A4%D7%A1%D7%95-%D7%9E%D7%A2%D7%A9%D7%A0%D7%99%D7%9D-%D7%91%D7%A4%D7%90%D7%91-%D7%93%D7%91%D7%9C%D7%99%D7%9F-%C2%A0%E2%80%93-%D7%94%D7%A9%D7%95%D7%A4%D7%98-%D7%96%D7%99%D7%9B%D7%94-%D7%9E%D7%94%D7%90%D7%99%D7%A9%D7%95%D7%9E%D7%99%D7%9D#.VQlUltKsUVI" target="_blank" rel="noopener" class="precedent-link">
+                    <span>סיקור בפסקדין</span>
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Mediation Center: ONLY "מרכז הגישור", No Partner Photo/Name -->
+    <section class="section-wrap" id="mediation" aria-labelledby="mediation-heading" style="border-top: 1px solid var(--border-subtle);">
+        <div class="mediation-module">
+            <div>
+                <span class="section-lead-tag">יישוב סכסוכים אלטרנטיבי</span>
+                <h2 id="mediation-heading">מרכז הגישור</h2>
+                <p>
+                    סכסוך משפטי מורכב אינו חייב להסתיים במלחמה מתישה, יקרה ופומבית בין כותלי בית המשפט. מרכז הגישור מציע הליך מקצועי, מהיר ודיסקרטי המאפשר לצדדים להגיע להסכמות מחייבות בשליטה מלאה ובדרכי שלום.
+                </p>
+                <div class="mediation-pillars">
+                    <div class="pillar-item"><i class="fas fa-handshake" aria-hidden="true"></i> גישור מסחרי ועסקי</div>
+                    <div class="pillar-item"><i class="fas fa-building" aria-hidden="true"></i> גישור בסכסוכי נדל״ן</div>
+                    <div class="pillar-item"><i class="fas fa-users" aria-hidden="true"></i> גישור משפחתי וירושות</div>
+                    <div class="pillar-item"><i class="fas fa-shield-heart" aria-hidden="true"></i> סודיות וחיסיון מלאים</div>
+                </div>
+                <a href="https://gishur.law" target="_blank" rel="noopener" class="btn-primary">
+                    <span>מעבר לאתר מרכז הגישור (gishur.law)</span>
+                    <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 32px; text-align: center;">
+                <i class="fas fa-scale-unbalanced" style="font-size: 3rem; color: var(--accent); margin-bottom: 16px;" aria-hidden="true"></i>
+                <h3 style="font-family: var(--font-display); font-size: 1.4rem; color: #ffffff; margin-bottom: 10px;">יתרונות הליך הגישור</h3>
+                <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+                    סיום מהיר תוך מספר שבועות, חיסכון של עשרות אלפי שקלים בהוצאות משפט, וקביעת פתרון שמוסכם על שני הצדדים ללא כפיית פסק דין.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-wrap" id="faq" aria-labelledby="faq-heading" style="border-top: 1px solid var(--border-subtle);">
+        <div class="section-header" style="text-align: center;">
+            <span class="section-lead-tag">מענה מקצועי ראשוני</span>
+            <h2 class="section-title" id="faq-heading">שאלות נפוצות</h2>
+            <p class="section-subtitle" style="margin: 0 auto;">תשובות ישירות לסוגיות המעסיקות לקוחות עסקיים ומעסיקים לפני פנייה לעו״ד.</p>
+        </div>
+
+        <div class="faq-accordion">
+            <details class="faq-item-a" open>
+                <summary class="faq-question-btn">
+                    <span>מה כולל שירות ריטיינר למעסיקים ולעסקים?</span>
+                    <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+                </summary>
+                <div class="faq-body">
+                    שירות ריטיינר מעניק לעסק מעטפת משפטית שוטפת במחיר חודשי קבוע. השירות כולל זמינות טלפונית ישירה להתייעצויות בזמן אמת, בדיקה ועריכה של חוזים, ניסוח מכתבי התראה, ליווי שימועים וטיפול בסוגיות עובד-מעביד באופן המונע תביעות יקרות מראש.
+                </div>
+            </details>
+
+            <details class="faq-item-a">
+                <summary class="faq-question-btn">
+                    <span>קיבלתי מכתב התראה לפני תביעה. מה הצעד הנכון לעשות?</span>
+                    <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+                </summary>
+                <div class="faq-body">
+                    הדבר החשוב ביותר הוא לא להתעלם ולא להגיב באופן רגשי או לא מתועד. פנו מיידית לייעוץ משפטי מקצועי. תגובה מנומקת ושקולה בשלב זה יכולה פעמים רבות לעצור את הגשת התביעה, לחשוף כשלים בטענות הצד השני, או להביא לפשרה מוקדמת ומוזלת.
+                </div>
+            </details>
+
+            <details class="faq-item-a">
+                <summary class="faq-question-btn">
+                    <span>האם המשרד מטפל גם בחובות קטנים או בינוניים של העסק?</span>
+                    <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+                </summary>
+                <div class="faq-body">
+                    בהחלט. למשרדנו מחלקה ייעודית ויעילה לגביית חובות עסקיים, כולל מסלול מהיר לתביעות על סכום קצוב (עד 75,000 ₪) המוגשות ישירות להוצאה לפועל ללא צורך בהתדיינות משפטית ממושכת, וכן מימוש שטרות וצ'קים חוזרים.
+                </div>
+            </details>
+
+            <details class="faq-item-a">
+                <summary class="faq-question-btn">
+                    <span>מה היתרון של הליך גישור במרכז הגישור על פני בית משפט?</span>
+                    <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+                </summary>
+                <div class="faq-body">
+                    גישור הוא הליך מהיר משמעותית (מסתיים לרוב במספר פגישות ממוקדות), חסכוני ביותר בהשוואה לשנים של שכר טרחה ואגרות, ודיסקרטי לחלוטין. היתרון המכריע: הצדדים הם שקובעים את ההסדר ומחזיקים בשליטה מלאה, במקום ששופט זר יכפה פסק דין חד-צדדי.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section-wrap" id="contact" aria-labelledby="contact-heading" style="border-top: 1px solid var(--border-subtle);">
+        <div class="section-header">
+            <span class="section-lead-tag">פנייה דיסקרטית</span>
+            <h2 class="section-title" id="contact-heading">בואו נגדיר את האסטרטגיה המנצחת</h2>
+            <p class="section-subtitle">משברים משפטיים וחשיפות מעסיקים לא נפתרים מעצמם. השאירו פרטים לתיאום שיחת ייעוץ ראשונית וממוקדת.</p>
+        </div>
+
+        <div class="contact-wrap-grid">
+            <div class="contact-form-side">
+                <form action="https://formspree.io/f/xnjjeykw" method="POST" onsubmit="return validateContactFormA()">
+                    <div class="form-group-a">
+                        <label for="name_a" class="form-label">שם מלא *</label>
+                        <input type="text" id="name_a" name="name" class="form-input-a" placeholder="ישראל ישראלי" required autocomplete="name">
+                    </div>
+
+                    <div class="form-group-a">
+                        <label for="phone_a" class="form-label">מספר טלפון נייד *</label>
+                        <input type="tel" id="phone_a" name="phone" class="form-input-a" placeholder="050-0000000" required autocomplete="tel" inputmode="tel">
+                    </div>
+
+                    <div class="form-group-a">
+                        <label for="email_a" class="form-label">כתובת אימייל</label>
+                        <input type="email" id="email_a" name="email" class="form-input-a" placeholder="office@company.co.il" autocomplete="email">
+                    </div>
+
+                    <div class="form-group-a">
+                        <label for="msg_a" class="form-label">תמצית הפנייה</label>
+                        <textarea id="msg_a" name="message" class="form-input-a" rows="4" placeholder="באיזה נושא נוכל לסייע? (דיני עבודה למעסיקים, ליטיגציה מסחרית, גבייה, גישור)" style="resize: vertical;"></textarea>
+                    </div>
+
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="legal_consent_a" required>
+                        <label for="legal_consent_a">הנני מבין/ה כי עצם שליחת הפנייה אינה יוצרת יחסי עורך דין–לקוח והמידע נמסר לשם יצירת קשר ראשוני בלבד.</label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-paper-plane" aria-hidden="true" style="margin-left: 8px;"></i> שליחת פנייה לבדיקה מיידית
+                    </button>
+                </form>
+            </div>
+
+            <div class="contact-info-side">
+                <div>
+                    <h3 style="font-family: var(--font-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 24px;">משרד עורכי דין עופר כגן</h3>
+                    <ul class="office-contact-list">
+                        <li>
+                            <i class="fas fa-location-dot" aria-hidden="true"></i>
+                            <div>
+                                <span class="contact-entry-title">כתובת המשרד</span>
+                                <address style="font-style: normal; color: #ffffff; line-height: 1.4;">
+                                    רח׳ סוקולוב 46, מגדל כיכר המושבה<br>
+                                    קומה 7, משרד 705, הוד השרון
+                                </address>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            <div>
+                                <span class="contact-entry-title">טלפון המשרד</span>
+                                <a href="tel:+972774140097">077-4140097</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            <div>
+                                <span class="contact-entry-title">טלפון נייד ו-WhatsApp</span>
+                                <a href="tel:+972504084810">050-4084810</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <div>
+                                <span class="contact-entry-title">דואר אלקטרוני</span>
+                                <a href="mailto:ofer@lk-law.co.il">ofer@lk-law.co.il</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <span class="contact-entry-title" style="margin-bottom: 8px;">ניווט מהיר למשרד</span>
+                    <div class="maps-action-btns">
+                        <a href="https://waze.com/ul?q=Sokolov+46+Hod+Hasharon" target="_blank" rel="noopener" class="btn-map-action waze">
+                            <i class="fab fa-waze" aria-hidden="true"></i> ניווט ב-Waze
+                        </a>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Sokolov+46+Hod+Hasharon" target="_blank" rel="noopener" class="btn-map-action google">
+                            <i class="fas fa-map-pin" aria-hidden="true"></i> Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Floating WhatsApp Action -->
+<a href="https://wa.me/972504084810?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%A2%D7%95%D7%B4%D7%93%20%D7%9B%D7%92%D7%9F%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%99%D7%90%D7%95%D7%9D%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%99%D7%99%D7%A2%D7%95%D7%A5." class="whatsapp-dock" target="_blank" rel="noopener" aria-label="פתח שיחת WhatsApp עם עו&quot;ד עופר כגן">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+<!-- Site Footer -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-col">
+            <h4>עו״ד עופר כגן | O.K LAW</h4>
+            <p style="line-height: 1.6; margin-bottom: 16px;">
+                משרד בוטיק מוביל לדיני עבודה למעסיקים, ליטיגציה מסחרית מורכבת, גבייה משפטית והוצאה לפועל. שילוב בין אסטרטגיה חסרת פשרות להוגנות מקצועית.
+            </p>
+            <p style="font-size: 0.85rem; color: var(--accent);">פגישות ייעוץ במשרד בתיאום מראש בלבד.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>תחומי התמחות</h4>
+            <ul class="footer-links-list">
+                <li><a href="#labor-employers">דיני עבודה למעסיקים ובכירים</a></li>
+                <li><a href="#services">ליטיגציה מסחרית ומשפט מנהלי</a></li>
+                <li><a href="#services">גבייה משפטית והוצאה לפועל</a></li>
+                <li><a href="#services">נדל״ן ומקרקעין</a></li>
+                <li><a href="#mediation">מרכז הגישור ויישוב סכסוכים</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>מידע וזמני פעילות</h4>
+            <ul class="footer-links-list">
+                <li>ימים א׳–ה׳: 09:00 – 18:00</li>
+                <li>ימי ו׳ וערבי חג: בתיאום טלפוני מראש</li>
+                <li>סוקולוב 46, קומה 7, הוד השרון</li>
+                <li>טלפון: <a href="tel:+972774140097">077-4140097</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-legal-bar">
+        <div>
+            © 2026 עו״ד עופר כגן | O.K LAW. כל הזכויות שמורות.
+            <span style="display: block; font-size: 0.8rem; opacity: 0.7; margin-top: 4px;">אין באמור באתר משום ייעוץ משפטי מחייב או התחייבות לתוצאה. ט.ל.ח.</span>
+        </div>
+        <div class="footer-legal-links">
+            <a href="../terms.html">תקנון האתר</a>
+            <a href="../privacy.html">מדיניות פרטיות</a>
+            <a href="#top">הצהרת נגישות (WCAG 2.0 AA)</a>
+            <a href="index.html">חזרה למרכז הקונספטים</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Responsive Mobile Nav Toggle
+    function toggleNavMenu() {
+        const nav = document.getElementById('mainNav');
+        const btn = document.getElementById('menuToggleBtn');
+        const isExpanded = nav.classList.toggle('active');
+        btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+    }
+
+    // Toggle Filming Specification for Ofer
+    function toggleFilmingSpec() {
+        const box = document.getElementById('filmingSpecBox');
+        const btn = document.getElementById('specToggleBtn');
+        const isOpen = box.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    // Respect prefers-reduced-motion for Video & Animations
+    const mediaReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    function evaluateMotionPreference(mq) {
+        const video = document.getElementById('heroVideo');
+        if (!video) return;
+        if (mq.matches) {
+            video.pause();
+        } else {
+            video.play().catch(function() {
+                // Autoplay policy fallback
+            });
+        }
+    }
+    evaluateMotionPreference(mediaReducedMotion);
+    mediaReducedMotion.addEventListener('change', evaluateMotionPreference);
+
+    // Form Validation (Israeli Phone standard)
+    function validateContactFormA() {
+        const phone = document.getElementById('phone_a').value.replace(/\D/g, '');
+        const regex = /^05\d{8}$/;
+        if (!regex.test(phone)) {
+            alert('אנא הזינו מספר טלפון נייד תקין בן 10 ספרות (מתחיל ב-05).');
+            document.getElementById('phone_a').focus();
+            return false;
+        }
+        return true;
+    }
+</script>
+
+</body>
+</html>
