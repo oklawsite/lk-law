@@ -263,11 +263,12 @@
         .hero { 
             background-color: var(--bg-deep);
             background-image: linear-gradient(rgba(10, 30, 51, 0.9), rgba(10, 30, 51, 0.7)), url('images/hero-bg.jpg');
-            background-size: cover; background-position: center 30%; height: 55vh; min-height: 450px; 
-            display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); padding: 0 20px; 
+            background-size: cover; background-position: center 30%; height: auto; min-height: 480px; 
+            display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); padding: 50px 20px; 
         }
-        .hero-content h1 { font-size: 3rem; text-shadow: 0 4px 10px rgba(0,0,0,0.5); line-height: 1.2; margin-bottom: 15px; border-bottom: 4px solid var(--accent); display: inline-block; padding-bottom: 15px; }
-        .hero p { font-size: 1.3rem; color: #cbd5e1; max-width: 800px; margin: 15px auto 0; font-weight: 400; }
+        .hero-content { max-width: 1000px; margin: 0 auto; }
+        .hero-content h1 { font-size: clamp(1.8rem, 2.8vw, 2.6rem); text-shadow: 0 4px 10px rgba(0,0,0,0.5); line-height: 1.3; margin-bottom: 15px; border-bottom: 4px solid var(--accent); display: inline-block; padding-bottom: 15px; }
+        .hero p { font-size: 1.25rem; color: #cbd5e1; max-width: 850px; margin: 15px auto 0; font-weight: 400; line-height: 1.6; }
         .cta-btn { background: var(--accent); color: var(--bg-deep); padding: 12px 35px; text-decoration: none; font-weight: 700; border-radius: 4px; display: inline-flex; align-items: center; margin-top: 25px; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3); border:none; cursor: pointer; font-family: inherit;}
         .cta-btn:hover { background: white; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255,255,255,0.3); }
 
@@ -525,8 +526,8 @@
 <main id="main">
 <section class="hero fade-on-scroll">
     <div class="hero-content">
-        <h1>חשיבה אסטרטגית. תוצאות מוכחות.</h1>
-        <p>משרד עורכי דין בהוד השרון: 17 שנות מצוינות בליטיגציה מסחרית, דיני עבודה, נדל"ן ופתרונות חוב מורכבים. כשאתה צריך את הטובים ביותר לצידך.</p>
+        <h1>עו"ד עופר כגן – משרד עורכי דין וגישור בהוד השרון | ליטיגציה מסחרית, דיני עבודה למעסיקים והוצאה לפועל</h1>
+        <p class="hero-subtitle">חשיבה אסטרטגית. תוצאות מוכחות. במשרדנו אנו מעניקים ליווי משפטי ענייני ושקול לחברות, מעסיקים ואנשי עסקים – בליטיגציה מסחרית, דיני עבודה והסדרי חוב, מתוך ראייה מעשית של טובת הלקוח.</p>
         <a href="#contact" class="cta-btn">תיאום פגישת אסטרטגיה <i class="fas fa-arrow-left"></i></a>
     </div>
 </section>
@@ -721,13 +722,13 @@
             <div class="media-source">פסקדין</div>
             <h3>זיכוי פאב מעישון</h3>
             <p>ניצחון בבית המשפט: זיכוי מלא לפאב "דבלין" מאישומים על אי-מניעת עישון, לאחר שהוכחנו אכיפה יעילה.</p>
-            <a href="http://www.psakdin.co.il/Document/%D7%A4%D7%A7%D7%97%D7%99%D7%9D-%D7%AA%D7%A4%D7%A1%D7%95-%D7%9E%D7%A2%D7%A9%D7%A0%D7%99%D7%9D-%D7%91%D7%A4%D7%90%D7%91-%D7%93%D7%91%D7%9C%D7%99%D7%9F-%C2%A0%E2%80%93-%D7%94%D7%A9%D7%95%D7%A4%D7%98-%D7%96%D7%99%D7%9B%D7%94-%D7%9E%D7%94%D7%90%D7%99%D7%A9%D7%95%D7%9E%D7%99%D7%9D#.VQlUltKsUVI" target="_blank" rel="noopener" class="read-more-btn">לקריאת הכתבה <i class="fas fa-external-link-alt"></i></a>
+            <a href="https://www.psakdin.co.il/Document/%D7%A4%D7%A7%D7%97%D7%99%D7%9D-%D7%AA%D7%A4%D7%A1%D7%95-%D7%9E%D7%A2%D7%A9%D7%A0%D7%99%D7%9D-%D7%91%D7%A4%D7%90%D7%91-%D7%93%D7%91%D7%9C%D7%99%D7%9F-%C2%A0%E2%80%93-%D7%94%D7%A9%D7%95%D7%A4%D7%98-%D7%96%D7%99%D7%9B%D7%94-%D7%9E%D7%94%D7%90%D7%99%D7%A9%D7%95%D7%9E%D7%99%D7%9D" target="_blank" rel="noopener" class="read-more-btn">לקריאת הכתבה <i class="fas fa-external-link-alt"></i></a>
         </div>
         <div class="why-item media-card">
             <div class="media-source">פסקדין</div>
             <h3>ביטול מכרז עירייה</h3>
             <p>בית המשפט קיבל את העתירה שהגשנו ועצר מכרז פגום של עיריית קרית מוצקין בשל חשש להטיה.</p>
-            <a href="http://www.psakdin.co.il/Document/%D7%94%D7%90%D7%9D-%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA-%D7%A7%D7%A8%D7%99%D7%AA-%D7%9E%D7%95%D7%A6%D7%A7%D7%99%D7%9F-%D7%A0%D7%99%D7%A1%D7%AA%D7%94-%D7%9C%D7%94%D7%98%D7%95%D7%AA-%D7%9E%D7%9B%D7%A8%D7%96#.Vbc8jLNViko" target="_blank" rel="noopener" class="read-more-btn">לקריאת הכתבה <i class="fas fa-external-link-alt"></i></a>
+            <a href="https://www.psakdin.co.il/Document/%D7%94%D7%90%D7%9D-%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA-%D7%A7%D7%A8%D7%99%D7%AA-%D7%9E%D7%95%D7%A6%D7%A7%D7%99%D7%9F-%D7%A0%D7%99%D7%A1%D7%AA%D7%94-%D7%9C%D7%94%D7%98%D7%95%D7%AA-%D7%9E%D7%9B%D7%A8%D7%96" target="_blank" rel="noopener" class="read-more-btn">לקריאת הכתבה <i class="fas fa-external-link-alt"></i></a>
         </div>
     </div>
 </section>
@@ -864,7 +865,7 @@
 </footer>
 
 <div class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="חזרה לראש העמוד"><i class="fas fa-arrow-up"></i></div>
-<a href="https://wa.me/972504084810?text=שלום, אשמח לתיאום שיחת ייעוץ." class="whatsapp-float" target="_blank" rel="noopener" aria-label="צור קשר בוואטסאפ"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/972504084810?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%99%D7%90%D7%95%D7%9D%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%99%D7%99%D7%A2%D7%95%D7%A5." class="whatsapp-float" target="_blank" rel="noopener" aria-label="צור קשר בוואטסאפ"><i class="fab fa-whatsapp"></i></a>
 
 <script>
     // --- Mobile Menu ---
