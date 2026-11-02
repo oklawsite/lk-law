@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<!--
+========================================================================================
+CONCEPT C: "THE STRATEGIC SITUATION ROOM" / חדר מצב אסטרטגי מונחה-סוגיה (2026 INNOVATION)
+========================================================================================
+
+THE IDEA & STRATEGIC RATIONALE (Why this breaks the Israeli legal web paradigm):
+1. The 2026 Problem:
+   Almost every Israeli law firm website in 2026 is still an egocentric digital brochure:
+   generic photos of scales of justice, passive bios, and dense paragraphs reciting statutes.
+   Clients contacting a premier litigator or employer-side labour counsel do not visit
+   to read a brochure. They are experiencing acute operational stress:
+   - An employee has threatened a massive lawsuit or a sensitive hearing is looming.
+   - A business partner has breached a contract or frozen accounts.
+   - A major debtor is absconding with assets and emergency freeze orders are needed.
+   - A high-stakes dispute is escalating and must be resolved discreetly at מרכז הגישור.
+
+2. The 2026 Solution (Concept C):
+   Concept C shifts the paradigm from "Firm-Centric" (who we are) to "Situation-Centric"
+   (where the client stands right now).
+   The page opens with an interactive "חדר מצב משפטי" (Strategic Situation Navigator).
+   The user selects their immediate challenge:
+   [1] דיני עבודה למעסיקים (Employer crisis / hearing / claim defense)
+   [2] ליטיגציה מסחרית (Commercial battle / breach / partners dispute)
+   [3] גבייה והוצאה לפועל (Debt recovery / prompt enforcement)
+   [4] מרכז הגישור (Discreet dispute resolution outside the courts)
+
+   Selecting a situation dynamically recalibrates:
+   - "כללי ברזל מיידיים" (Immediate Tactical Do's & Don'ts)
+   - "התקדים שלנו מהשטח" (Ofer's actual precedent case: e.g. pregnancy claim, tender cancellation, pub acquittal)
+   - "המהלך האסטרטגי" (The winning step-by-step game plan)
+   - Direct, encrypted one-tap line to Ofer's private desk.
+
+3. The Hero Video Integration ("Aperture of Composure"):
+   An ultra-wide 21:9 cinematic aperture showing Ofer in quiet, focused command.
+   Subtle slow-motion (0.5x, 24fps) conveys stillness, authority, and meticulous precision.
+   Zero gimmicks, 100% dignified, WCAG 2.0 AA accessible, respecting prefers-reduced-motion.
+========================================================================================
+-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="עו&quot;ד עופר כגן - קונספט C: חדר מצב אסטרטגי. משרד בוטיק בהוד השרון: דיני עבודה למעסיקים, ליטיגציה מסחרית, גבייה משפטית ומרכז הגישור.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0b0e14">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <title>קונספט C: חדר מצב משפטי | עו"ד עופר כגן - O.K LAW</title>
+
+    <!-- Typography: Frank Ruhl Libre (Editorial Authority) & Assistant (Modern Israeli Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&family=Frank+Ruhl+Libre:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ==========================================================================
+           CONCEPT C: DESIGN TOKENS & SYSTEM
+           Dark basalt luxury, warm brass gold, interactive situation dossier,
+           WCAG 2.0 AA compliant (contrast >= 4.5:1).
+           ========================================================================== */
+        :root {
+            --bg-canvas: #0b0e14;
+            --bg-surface: #121721;
+            --bg-elevated: #18202d;
+            --bg-card: #151c27;
+            
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+
+            /* Accent: Warm Brass Gold */
+            --accent: #e5ba63;            /* On dark (Contrast: 11.2:1) */
+            --accent-deep: #845e14;       /* On light (Contrast: 5.85:1) */
+            --accent-glow: rgba(229, 186, 99, 0.2);
+            --accent-border: rgba(229, 186, 99, 0.35);
+
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            
+            --font-display: 'Frank Ruhl Libre', Georgia, serif;
+            --font-sans: 'Assistant', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            --container-max: 1280px;
+            --transition-smooth: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-canvas);
+            color: var(--text-primary);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Accessible Focus */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -80px;
+            right: 20px;
+            background: var(--accent);
+            color: #0b0e14;
+            padding: 12px 24px;
+            font-weight: 700;
+            z-index: 9999;
+            text-decoration: none;
+            border-radius: 0 0 6px 6px;
+            transition: top 0.2s ease;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Concept Ribbon */
+        .concept-meta-bar {
+            background: #05070a;
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 8px 24px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            position: relative;
+            z-index: 1001;
+        }
+        .concept-meta-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .concept-meta-links {
+            display: flex;
+            gap: 14px;
+        }
+        .concept-meta-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .concept-meta-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: rgba(11, 14, 20, 0.95);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 10px 5%;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-bar-contact {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .top-bar-contact a {
+            color: var(--text-primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+        .top-bar-contact a:hover {
+            color: var(--accent);
+        }
+
+        /* Header Navigation */
+        header.site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 14, 20, 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .header-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .brand-link {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .brand-mark {
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--accent-border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.25rem;
+            background: rgba(229, 186, 99, 0.08);
+        }
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+        }
+        .brand-title {
+            font-family: var(--font-display);
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+        }
+        .brand-sub {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+        .nav-item {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.98rem;
+            padding: 6px 0;
+            position: relative;
+            transition: color 0.2s;
+        }
+        .nav-item:hover,
+        .nav-item.active {
+            color: var(--accent);
+        }
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.25s ease;
+        }
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        .header-hotline-btn {
+            background: rgba(229, 186, 99, 0.12);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 9px 20px;
+            border-radius: 6px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+        }
+        .header-hotline-btn:hover {
+            background: var(--accent);
+            color: #0b0e14;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            padding: 10px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        /* ==========================================================================
+           HERO: "THE APERTURE OF COMPOSURE"
+           21:9 Ultra-widescreen cinematic frame + Direct Situation Trigger
+           ========================================================================== */
+        .hero-chamber {
+            position: relative;
+            padding: 50px 24px 30px;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .hero-lead-text {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 36px;
+        }
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+            padding: 4px 14px;
+            background: rgba(229, 186, 99, 0.08);
+            border-radius: 40px;
+            border: 1px solid var(--accent-border);
+        }
+        .hero-chamber-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 5vw, 4.2rem);
+            line-height: 1.15;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-wrap: balance;
+            letter-spacing: -0.02em;
+        }
+        .hero-chamber-desc {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        /* 21:9 Cinematic Video Aperture */
+        .cinematic-aperture {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 21 / 9;
+            min-height: 320px;
+            max-height: 520px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--accent-border);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+            background: #000000;
+        }
+
+        .aperture-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(110%) brightness(85%);
+        }
+
+        /* Animated placeholder simulation */
+        .aperture-sim {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 60% 40%, rgba(24, 32, 45, 0.4) 0%, rgba(11, 14, 20, 0.95) 85%),
+                        url('../images/ofer-studio-1.jpg') center 22% / cover no-repeat;
+            filter: grayscale(40%) contrast(115%) brightness(75%);
+            animation: slowAperture 18s ease-in-out infinite alternate;
+        }
+        @keyframes slowAperture {
+            0% { transform: scale(1.0); }
+            100% { transform: scale(1.04) translateY(-1.5%); }
+        }
+
+        .aperture-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(11, 14, 20, 0.3) 0%, rgba(11, 14, 20, 0.75) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            pointer-events: none;
+        }
+        .aperture-caption {
+            font-size: 0.92rem;
+            color: #ffffff;
+            background: rgba(11, 14, 20, 0.85);
+            border: 1px solid var(--border-subtle);
+            padding: 8px 18px;
+            border-radius: 6px;
+            backdrop-filter: blur(8px);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .aperture-caption i {
+            color: var(--accent);
+        }
+
+        /* Video Spec Collapsible Badge */
+        .aperture-spec-bar {
+            margin-top: 14px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+        .spec-btn-c {
+            background: none;
+            border: 1px solid var(--accent-border);
+            color: var(--accent);
+            font-family: inherit;
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .spec-btn-c:hover {
+            background: rgba(229, 186, 99, 0.12);
+        }
+
+        .spec-details-c {
+            display: none;
+            width: 100%;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-subtle);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .spec-details-c.open {
+            display: block;
+        }
+
+        /* ==========================================================================
+           OUT-OF-THE-BOX 2026 FEATURE:
+           THE INTERACTIVE SITUATION ROOM (חדר מצב אסטרטגי)
+           ========================================================================== */
+        .situation-room-section {
+            max-width: var(--container-max);
+            margin: 50px auto 40px;
+            padding: 0 24px;
+        }
+
+        .situation-room-frame {
+            background: var(--bg-surface);
+            border: 1px solid var(--accent-border);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .situation-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .situation-header h2 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .situation-header p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        /* The Scenario Selector Tabs */
+        .scenario-tabs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+        .scenario-tab-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            font-family: inherit;
+            padding: 16px 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.98rem;
+            font-weight: 700;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+            text-align: center;
+        }
+        .scenario-tab-btn i {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+        .scenario-tab-btn:hover {
+            border-color: rgba(229, 186, 99, 0.4);
+            color: #ffffff;
+            background: var(--bg-elevated);
+        }
+        .scenario-tab-btn.active {
+            background: linear-gradient(145deg, #1f2a3a 0%, #151c27 100%);
+            border-color: var(--accent);
+            color: #ffffff;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+        }
+        .scenario-tab-btn.active i {
+            color: var(--accent);
+        }
+
+        /* The Dynamic Situation Dossier Content Panels */
+        .dossier-panel {
+            display: none;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 36px;
+            animation: fadeInDossier 0.35s ease;
+        }
+        .dossier-panel.active {
+            display: block;
+        }
+        @keyframes fadeInDossier {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .dossier-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 1fr;
+            gap: 36px;
+        }
+
+        .dossier-title {
+            font-family: var(--font-display);
+            font-size: 1.85rem;
+            color: #ffffff;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .dossier-title i {
+            color: var(--accent);
+        }
+        .dossier-desc {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .rules-card {
+            background: rgba(0, 0, 0, 0.25);
+            border-right: 4px solid var(--accent);
+            padding: 18px 22px;
+            border-radius: 6px;
+            margin-bottom: 24px;
+        }
+        .rules-title {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .rules-list {
+            list-style: none;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+        .rules-list li {
+            margin-bottom: 6px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .precedent-box-c {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .precedent-label-c {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .precedent-head-c {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .precedent-body-c {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.65;
+            margin-bottom: 18px;
+        }
+
+        .hotline-action-row {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+        .btn-hotline {
+            background: var(--accent);
+            color: #0b0e14;
+            font-weight: 800;
+            font-size: 1rem;
+            padding: 13px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+        }
+        .btn-hotline:hover {
+            background: #f3be5d;
+            transform: translateY(-2px);
+        }
+
+        /* Section Layouts */
+        .section-wrap {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 70px 24px;
+        }
+        .section-header-c {
+            margin-bottom: 40px;
+            text-align: right;
+        }
+        .sec-tag-c {
+            color: var(--accent);
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .sec-title-c {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3.2vw, 2.7rem);
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        /* Practice Modules List */
+        .practice-dossiers-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .practice-dossier-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 32px;
+            transition: var(--transition-smooth);
+        }
+        .practice-dossier-card:hover {
+            border-color: rgba(229, 186, 99, 0.4);
+            transform: translateY(-4px);
+        }
+        .practice-dossier-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .practice-dossier-card h3 i {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        .practice-dossier-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+        /* About Profile */
+        .about-c-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.25fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .about-c-img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid var(--accent-border);
+            display: block;
+        }
+
+        /* Mediation Center: ONLY "מרכז הגישור", Strictly No Partner */
+        .mediation-c-box {
+            background: linear-gradient(135deg, #141c29 0%, #0d121b 100%);
+            border: 1px solid var(--accent-border);
+            border-radius: 16px;
+            padding: 48px;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .mediation-c-box h3 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+        .mediation-c-box p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        /* FAQ Accordion */
+        .faq-c-container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .faq-item-c {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            margin-bottom: 14px;
+            overflow: hidden;
+        }
+        .faq-item-c summary {
+            padding: 20px 24px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item-c summary i {
+            color: var(--accent);
+        }
+        .faq-item-c[open] summary {
+            border-bottom: 1px solid var(--border-subtle);
+            background: var(--bg-elevated);
+        }
+        .faq-c-content {
+            padding: 20px 24px;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact-c-frame {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 48px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+        }
+        .form-group-c {
+            margin-bottom: 18px;
+        }
+        .form-group-c label {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .input-c {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        .input-c:focus {
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* Footer */
+        footer.site-footer {
+            background: #05070a;
+            border-top: 1px solid var(--border-subtle);
+            padding: 60px 24px 30px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .footer-grid-c {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-grid-c h4 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+        .footer-grid-c ul {
+            list-style: none;
+        }
+        .footer-grid-c li {
+            margin-bottom: 10px;
+        }
+        .footer-grid-c a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-grid-c a:hover {
+            color: var(--accent);
+        }
+        .footer-legal-c {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.85rem;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-dock {
+            position: fixed;
+            bottom: 28px;
+            left: 28px;
+            background: #25D366;
+            color: #ffffff;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.9rem;
+            z-index: 2000;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+        .whatsapp-dock:hover {
+            transform: scale(1.08) rotate(8deg);
+        }
+
+        /* ==========================================================================
+           RESPONSIVE & ACCESSIBILITY
+           ========================================================================== */
+        @media (max-width: 1024px) {
+            .scenario-tabs {
+                grid-template-columns: 1fr 1fr;
+            }
+            .dossier-grid,
+            .about-c-grid,
+            .mediation-c-box,
+            .contact-c-frame,
+            .footer-grid-c {
+                grid-template-columns: 1fr;
+            }
+            .cinematic-aperture {
+                aspect-ratio: 16 / 9;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--bg-canvas);
+                border-bottom: 1px solid var(--border-subtle);
+                flex-direction: column;
+                padding: 24px;
+                gap: 18px;
+            }
+            .main-nav.active {
+                display: flex;
+            }
+            .scenario-tabs {
+                grid-template-columns: 1fr;
+            }
+            .situation-room-frame {
+                padding: 24px 16px;
+            }
+            .dossier-panel {
+                padding: 24px 16px;
+            }
+            .contact-c-frame {
+                padding: 28px 18px;
+            }
+        }
+
+        /* prefers-reduced-motion: STRICT COMPLIANCE */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto !important;
+            }
+            * {
+                transition: none !important;
+                animation: none !important;
+            }
+            .aperture-sim {
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+<body id="top">
+
+<a class="skip-link" href="#main-content">דלג לתוכן המרכזי</a>
+
+<!-- Top Concept Switcher Bar -->
+<div class="concept-meta-bar" role="region" aria-label="סרגל קונספטים לעיצוב">
+    <div class="concept-meta-tag">
+        <i class="fas fa-microchip" aria-hidden="true"></i>
+        <span>קונספט C: חדר מצב אסטרטגי (אינטראקטיביות 2026, פריסה מונחית-סוגיה)</span>
+    </div>
+    <div class="concept-meta-links">
+        <a href="index.html"><strong>כל הקונספטים</strong></a> |
+        <a href="concept-a.html">מעבר לקונספט A (The Walk)</a> |
+        <a href="concept-b.html">מעבר לקונספט B (Rotating Moments)</a>
+    </div>
+</div>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="top-bar-contact">
+        <a href="tel:+972774140097" aria-label="התקשר למשרד 077-4140097"><i class="fas fa-phone-alt" aria-hidden="true"></i> 077-4140097</a>
+        <a href="tel:+972504084810" aria-label="התקשר לנייד 050-4084810"><i class="fas fa-mobile-alt" aria-hidden="true"></i> 050-4084810</a>
+        <a href="mailto:ofer@lk-law.co.il" aria-label="שלח דואר אלקטרוני"><i class="fas fa-envelope" aria-hidden="true"></i> ofer@lk-law.co.il</a>
+    </div>
+    <div>
+        <i class="fas fa-location-dot" style="color: var(--accent);" aria-hidden="true"></i>
+        <span>סוקולוב 46, קומה 7, מגדל כיכר המושבה, הוד השרון</span>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+    <div class="header-container">
+        <a href="#top" class="brand-link" aria-label="עורך דין עופר כגן - חזרה לדף הבית">
+            <div class="brand-mark">
+                <i class="fas fa-scale-balanced" aria-hidden="true"></i>
+            </div>
+            <div class="brand-text">
+                <span class="brand-title">O.K LAW</span>
+                <span class="brand-sub">עו״ד עופר כגן</span>
+            </div>
+        </a>
+
+        <button class="menu-toggle" onclick="toggleNavMenuC()" aria-label="פתח תפריט ניווט" aria-expanded="false" id="menuToggleBtnC">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <nav class="main-nav" id="mainNavC" aria-label="ניווט ראשי">
+            <a href="#situation-room" class="nav-item">חדר מצב אסטרטגי</a>
+            <a href="#services-c" class="nav-item">תחומי עיסוק</a>
+            <a href="#about-c" class="nav-item">אודות המשרד</a>
+            <a href="#mediation-c" class="nav-item">מרכז הגישור</a>
+            <a href="#faq-c" class="nav-item">שאלות נפוצות</a>
+            <a href="#contact-c" class="header-hotline-btn">קו ייעוץ דיסקרטי</a>
+        </nav>
+    </div>
+</header>
+
+<main id="main-content">
+
+    <!-- ==========================================================================
+         HERO SECTION: THE CINEMATIC APERTURE
+         Ultra-widescreen 21:9 visual + Statement of Executive Focus
+         ========================================================================== -->
+    <section class="hero-chamber" aria-label="פתיח - חדר מצב אסטרטגי">
+        <div class="hero-lead-text">
+            <div class="hero-eyebrow">
+                <i class="fas fa-compass" aria-hidden="true"></i>
+                <span>תפיסת שירות 2026: ממוקדת סוגיה, מונעת תוצאה</span>
+            </div>
+            <h1 class="hero-chamber-title">
+                המשבר המשפטי שלך דורש<br>חשיבה אסטרטגית שקטה.
+            </h1>
+            <p class="hero-chamber-desc">
+                משרד בוטיק בהוד השרון לחברות, אנשי עסקים ומעסיקים. 17 שנות ניסיון בהפיכת משברים מורכבים להכרעות מנצחות.
+            </p>
+        </div>
+
+        <!-- 21:9 Widescreen Video Aperture -->
+        <div class="cinematic-aperture" id="apertureFrame">
+            <!-- Simulated ambient gradient/motion placeholder -->
+            <div class="aperture-sim" id="apertureSim" aria-hidden="true"></div>
+
+            <!-- Video Slot for Ofer's filmed loop -->
+            <video class="aperture-video" id="chamberVideo" autoplay muted loop playsinline poster="../images/ofer-studio-1.jpg" aria-label="סרטון וידאו: עו&quot;ד עופר כגן בחדר האסטרטגיה">
+                <source src="assets/situation-room-placeholder.mp4" type="video/mp4">
+                <img src="../images/ofer-studio-1.jpg" alt="עו&quot;ד עופר כגן" style="width: 100%; height: 100%; object-fit: cover;">
+            </video>
+
+            <div class="aperture-overlay">
+                <div class="aperture-caption">
+                    <i class="fas fa-video" aria-hidden="true"></i>
+                    <span>עו״ד עופר כגן • חדר האסטרטגיה המשפטית (צילום רחב 21:9 בהילוך איטי 0.5x)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Spec Bar -->
+        <div class="aperture-spec-bar">
+            <span><strong>קונספט C:</strong> חלון קולנועי רחב (21:9) המשדר ריכוז אנליטי, סמכותיות ושקט מול סערה משפטית.</span>
+            <button type="button" class="spec-btn-c" onclick="toggleSpecC()" aria-expanded="false" id="specBtnC">
+                <i class="fas fa-sliders" aria-hidden="true"></i> מפרט צילום לעופר
+            </button>
+
+            <div class="spec-details-c" id="specBoxC">
+                <p><strong>מפרט הצילום המומלץ עבור עו״ד עופר כגן (קונספט C):</strong></p>
+                <p>
+                    <strong>סגנון ומשך:</strong> 8–10 שניות בלופ רציף, צילום בהילוך איטי קל (48fps מומר ל-24fps), עופר יושב או עומד ליד חלון משרדי גבוה או שולחן דיונים, בתנועה מאופקת של עיון בתיק ומבט מפוכח קדימה.<br>
+                    <strong>יחס ורזולוציה:</strong> פורמט קולנועי 21:9 (2560x1080 או 1920x820), חיתוך מותאם 16:9 במובייל.<br>
+                    <strong>צבעוניות:</strong> גריידינג עמוק, גווני פחם וברונזה חמה, חליפה כהה, תאורת Rim עדינה.<br>
+                    <strong>משקל יעד:</strong> פחות מ-3.8MB (H.264 MP4 / WebM ללא פס קול).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         OUT-OF-THE-BOX 2026: THE SITUATION ROOM (חדר מצב אסטרטגי)
+         ========================================================================== -->
+    <section class="situation-room-section" id="situation-room" aria-labelledby="situation-room-heading">
+        <div class="situation-room-frame">
+            <div class="situation-header">
+                <span class="sec-tag-c">ניווט מונחה-סוגיה</span>
+                <h2 id="situation-room-heading">מהי הזירה המשפטית בה אתה עומד כעת?</h2>
+                <p>בחרו את הסיטואציה הבוערת כדי לחשוף את ניתוח הסיכונים המיידי, התקדים הרלוונטי והמהלך המנצח של עו״ד כגן.</p>
+            </div>
+
+            <!-- The Scenario Tabs -->
+            <div class="scenario-tabs" role="tablist" aria-label="בחירת זירה משפטית">
+                <button class="scenario-tab-btn active" onclick="selectScenario(0)" role="tab" aria-selected="true" id="tab0">
+                    <i class="fas fa-user-tie" aria-hidden="true"></i>
+                    <span>מעסיק בסיכון תביעה או שימוע</span>
+                </button>
+                <button class="scenario-tab-btn" onclick="selectScenario(1)" role="tab" aria-selected="false" id="tab1">
+                    <i class="fas fa-handshake-slash" aria-hidden="true"></i>
+                    <span>סכסוך שותפים או חוזה מסחרי</span>
+                </button>
+                <button class="scenario-tab-btn" onclick="selectScenario(2)" role="tab" aria-selected="false" id="tab2">
+                    <i class="fas fa-receipt" aria-hidden="true"></i>
+                    <span>חוב עסקי גדול / עיקולי הוצל״פ</span>
+                </button>
+                <button class="scenario-tab-btn" onclick="selectScenario(3)" role="tab" aria-selected="false" id="tab3">
+                    <i class="fas fa-handshake" aria-hidden="true"></i>
+                    <span>פתרון בדיסקרטיות: מרכז הגישור</span>
+                </button>
+            </div>
+
+            <!-- Panel 0: Employer Defense -->
+            <div class="dossier-panel active" id="panel0" role="tabpanel" aria-labelledby="tab0">
+                <div class="dossier-grid">
+                    <div>
+                        <h3 class="dossier-title"><i class="fas fa-shield-halved" aria-hidden="true"></i> זירה: דיני עבודה וייצוג מעסיקים</h3>
+                        <p class="dossier-desc">
+                            תביעות עובדים, טענות לפיטורין שלא כדין או דרישות שכר מנופחות עלולות לעלות לעסק מאות אלפי שקלים. התנהלות נכונה ב-48 השעות הראשונות מכריעה את גורל התיק כולו.
+                        </p>
+                        
+                        <div class="rules-card">
+                            <div class="rules-title"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i> כללי ברזל מיידיים למעסיק:</div>
+                            <ul class="rules-list">
+                                <li>• <strong>לעולם אין לנסח מכתב פיטורין לפני שימוע:</strong> פסיקת בתי הדין לעבודה רואה בכך חוסר תום לב מובהק המזכה בפיצוי אוטומטי.</li>
+                                <li>• <strong>הודעה מראש בכתב:</strong> חובה למסור לעובד זימון מנומק לשימוע לפחות 48 שעות מראש עם כלל הטענות.</li>
+                                <li>• <strong>רישום נוכחות מסודר:</strong> היעדר שעון נוכחות חושף לתשלום עד 60 שעות נוספות גלובליות בחודש.</li>
+                            </ul>
+                        </div>
+
+                        <div class="hotline-action-row">
+                            <a href="#contact-c" class="btn-hotline">
+                                <span>התייעצות מיידית להגנת העסק</span>
+                                <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://wa.me/972504084810?text=שלום עופר, אני מעסיק ואשמח לייעוץ דחוף בדיני עבודה." target="_blank" rel="noopener" class="header-hotline-btn">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> פנייה ישירה לוואטסאפ
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="precedent-box-c">
+                        <div>
+                            <span class="precedent-label-c">תקדים מוכח מהשטח</span>
+                            <h4 class="precedent-head-c">תקדים פיצויים בהריון</h4>
+                            <p class="precedent-body-c">
+                                היכרות מעמיקה של שני צידי המתרס: עו״ד כגן הוביל פסק דין תקדימי בבית הדין לעבודה שזכה לסיקור ארצי ב-Ynet, בגין פיטורי עובדת ללא היתר. אנו יודעים בדיוק היכן מעסיקים נכשלים – וכיצד לגדר אותם מראש.
+                            </p>
+                        </div>
+                        <a href="http://www.ynet.co.il/articles/0,7340,L-4566466,00.html" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 700; text-decoration: none; font-size: 0.88rem;">
+                            לקריאת הכתבה ב-Ynet <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel 1: Commercial Litigation -->
+            <div class="dossier-panel" id="panel1" role="tabpanel" aria-labelledby="tab1">
+                <div class="dossier-grid">
+                    <div>
+                        <h3 class="dossier-title"><i class="fas fa-gavel" aria-hidden="true"></i> זירה: ליטיגציה מסחרית וסכסוכי שותפים</h3>
+                        <p class="dossier-desc">
+                            הפרת הסכם מהותית, פרישה ממשא ומתן בחוסר תום לב, או סכסוך שותפים המאיים לפרק את החברה. אנו נכנסים לזירה כדי לשמור על הנכסים והמוניטין שלכם.
+                        </p>
+                        
+                        <div class="rules-card">
+                            <div class="rules-title"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i> מהלכים טקטיים קריטיים:</div>
+                            <ul class="rules-list">
+                                <li>• <strong>סעדים זמניים:</strong> בקשה לצו מניעה זמני או עיקול עוד לפני שהצד השני מספיק להבריח פעילות.</li>
+                                <li>• <strong>תיעוד וראיות:</strong> הקלטת שיחה שאתם משתתפים בה היא חוקית וקבילה כראיה מכרעת.</li>
+                                <li>• <strong>הפרה יסודית:</strong> הגדרת ההפרה ודרישת פיצוי מוסכם ללא צורך בהוכחת נזק.</li>
+                            </ul>
+                        </div>
+
+                        <div class="hotline-action-row">
+                            <a href="#contact-c" class="btn-hotline">
+                                <span>בניית אסטרטגיית ליטיגציה</span>
+                                <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="precedent-box-c">
+                        <div>
+                            <span class="precedent-label-c">תקדים מוכח מהשטח</span>
+                            <h4 class="precedent-head-c">ביטול מכרז עירייה וזיכוי פאב ״דבלין״</h4>
+                            <p class="precedent-body-c">
+                                ניצחון מוחץ בעתירה מנהלית לעצירת מכרז עירוני של קרית מוצקין עקב הטיה, וזיכוי פלילי של בית עסק מוביל מאישומי עישון. הישגים מוכחים מול רשויות המדינה.
+                            </p>
+                        </div>
+                        <a href="http://www.psakdin.co.il/Document/%D7%94%D7%90%D7%9D-%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA-%D7%A7%D7%A8%D7%99%D7%AA-%D7%9E%D7%95%D7%A6%D7%A7%D7%99%D7%9F-%D7%A0%D7%99%D7%A1%D7%AA%D7%94-%D7%9C%D7%94%D7%98%D7%95%D7%AA-%D7%9E%D7%9B%D7%A8%D7%96#.Vbc8jLNViko" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 700; text-decoration: none; font-size: 0.88rem;">
+                            סיקור בפסקדין <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel 2: Debt Recovery -->
+            <div class="dossier-panel" id="panel2" role="tabpanel" aria-labelledby="tab2">
+                <div class="dossier-grid">
+                    <div>
+                        <h3 class="dossier-title"><i class="fas fa-file-invoice-dollar" aria-hidden="true"></i> זירה: גבייה משפטית והוצאה לפועל</h3>
+                        <p class="dossier-desc">
+                            חייבים סרבנים וצ'קים חוזרים פוגעים בתזרים המזומנים של העסק. מערך הגבייה של משרדנו פועל במהירות ובעוצמה כדי להפוך פסקי דין לכסף בחשבון.
+                        </p>
+                        
+                        <div class="rules-card">
+                            <div class="rules-title"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i> מסלולי פעולה מהירים:</div>
+                            <ul class="rules-list">
+                                <li>• <strong>תביעה לסכום קצוב (עד 75,000 ₪):</strong> הגשה ישירה להוצאה לפועל ללא דיון משפטי ארוך.</li>
+                                <li>• <strong>עיקול בטרם אזהרה:</strong> תפיסת כספים בחשבונות החייב לפני שהוא מבריח אותם.</li>
+                                <li>• <strong>הרמת מסך:</strong> רדיפה אחרי נכסים שהוברחו לקרובי משפחה של בעל העסק.</li>
+                            </ul>
+                        </div>
+
+                        <div class="hotline-action-row">
+                            <a href="#contact-c" class="btn-hotline">
+                                <span>פתיחת הליך גבייה מואץ</span>
+                                <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="precedent-box-c">
+                        <div>
+                            <span class="precedent-label-c">תוצאות מוכחות</span>
+                            <h4 class="precedent-head-c">מחיקת מיליונים והסדרי חוב</h4>
+                            <p class="precedent-body-c">
+                                ניהול משברי חוב מורכבים והסדרים מול מערכת הבנקאות והנושים שחסכו מיליוני שקלים ומנעו קריסה כלכלית של עסקים מובילים.
+                            </p>
+                        </div>
+                        <span style="color: var(--accent); font-weight: 700; font-size: 0.88rem;">גבייה נחושה לצד הגנה בחדלות פירעון</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel 3: Mediation Center (ONLY מרכז הגישור) -->
+            <div class="dossier-panel" id="panel3" role="tabpanel" aria-labelledby="tab3">
+                <div class="dossier-grid">
+                    <div>
+                        <h3 class="dossier-title"><i class="fas fa-scale-balanced" aria-hidden="true"></i> זירה: מרכז הגישור</h3>
+                        <p class="dossier-desc">
+                            כשרוצים לפתור סכסוך עסקי, שותפות או משבר משפחתי מבלי לחשוף סודות מסחריים ומבלי להיגרר לשנים של דיונים בבתי משפט.
+                        </p>
+                        
+                        <div class="rules-card">
+                            <div class="rules-title"><i class="fas fa-check-double" aria-hidden="true"></i> למה דווקא מרכז הגישור:</div>
+                            <ul class="rules-list">
+                                <li>• <strong>חיסיון מלא:</strong> כל מה שנאמר בחדר הגישור מוגן בחוק ואסור לשימוש בבית משפט.</li>
+                                <li>• <strong>מהירות:</strong> סיום הסכסוך בתוך שבועות ספורים במקום 3–5 שנים בבתי משפט.</li>
+                                <li>• <strong>שליטה בתוצאה:</strong> ההסכם נחתם רק אם אתם שלמים איתו, ומקבל תוקף של פסק דין.</li>
+                            </ul>
+                        </div>
+
+                        <div class="hotline-action-row">
+                            <a href="https://gishur.law" target="_blank" rel="noopener" class="btn-hotline">
+                                <span>מעבר לאתר מרכז הגישור (gishur.law)</span>
+                                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="precedent-box-c">
+                        <div>
+                            <span class="precedent-label-c">אלטרנטיבה מנצחת</span>
+                            <h4 class="precedent-head-c">סיום סכסוכים בהסכמה</h4>
+                            <p class="precedent-body-c">
+                                מאות סכסוכי שותפים, סכסוכי נדל״ן מורכבים וסכסוכי ירושה נפתרו אצלנו לשביעות רצון שני הצדדים תוך שמירה על כבוד הדדי.
+                            </p>
+                        </div>
+                        <span style="color: var(--accent); font-weight: 700; font-size: 0.88rem;">דיסקרטיות • מהירות • שליטה</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Practice Areas Overview -->
+    <section class="section-wrap" id="services-c" aria-labelledby="sec-services-heading">
+        <div class="section-header-c">
+            <span class="sec-tag-c">מעטפת משפטית מלאה</span>
+            <h2 class="sec-title-c" id="sec-services-heading">כלל שירותי המשרד</h2>
+        </div>
+
+        <div class="practice-dossiers-list">
+            <div class="practice-dossier-card">
+                <h3>דיני עבודה למעסיקים <i class="fas fa-briefcase" aria-hidden="true"></i></h3>
+                <p>הסכמי העסקה מותאמים, ליווי שימועים ופיטורין, הגנה בתביעות שכר ושעות נוספות, ומניעת תביעות עבודה.</p>
+            </div>
+            <div class="practice-dossier-card">
+                <h3>ליטיגציה מסחרית <i class="fas fa-gavel" aria-hidden="true"></i></h3>
+                <p>ייצוג בכל הערכאות בתביעות כספיות מורכבות, סכסוכי שותפים, עתירות מנהליות וצווי מניעה דחופים.</p>
+            </div>
+            <div class="practice-dossier-card">
+                <h3>גבייה והוצאה לפועל <i class="fas fa-coins" aria-hidden="true"></i></h3>
+                <p>תביעות לסכום קצוב (עד 75,000 ₪) במסלול מהיר, עיקולים דחופים ומימוש שטרות וצ'קים חוזרים.</p>
+            </div>
+            <div class="practice-dossier-card">
+                <h3>נדל״ן ומקרקעין <i class="fas fa-city" aria-hidden="true"></i></h3>
+                <p>עסקאות מכר ושכירות מסחריות, ליווי פרויקטים מול קבלנים, צוואות, ירושות וייפוי כוח מתמשך.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section-wrap" id="about-c" aria-labelledby="sec-about-heading" style="border-top: 1px solid var(--border-subtle);">
+        <div class="about-c-grid">
+            <div>
+                <img src="../images/ofer-studio-1.jpg" alt="עורך דין עופר כגן" class="about-c-img" loading="lazy">
+            </div>
+            <div>
+                <span class="sec-tag-c">עו״ד עופר כגן • מייסד המשרד</span>
+                <h2 class="sec-title-c" id="sec-about-heading">17 שנות ניסיון בחזית המשפט הישראלי</h2>
+                <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.75; margin-bottom: 20px;">
+                    עו״ד עופר כגן מביא עמו הבנה עסקית עמוקה, ידע משפטי נרחב וראייה אסטרטגית מקיפה. המשרד פועל במודל בוטיק ייחודי, שבו כל תיק מנוהל אישית על ידי עופר, תוך שימוש בכלים מתקדמים לחקר ראיות ולבניית מהלכים משפטיים מנצחים.
+                </p>
+                <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7;">
+                    משרדנו בהוד השרון מעניק מעטפת One-Stop Shop מקיפה למעסיקים ולחברות עסקיות, ומאמין כי ניצחון אמיתי מושג באמצעות הכנה מדוקדקת ויצירתיות בלתי פוסקת.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mediation Center: ONLY "מרכז הגישור", Strictly No Partner -->
+    <section class="section-wrap" id="mediation-c" aria-labelledby="sec-mediation-heading" style="border-top: 1px solid var(--border-subtle);">
+        <div class="mediation-c-box">
+            <div>
+                <span class="sec-tag-c">פתרון מחלוקות בדרכי נועם</span>
+                <h2 id="sec-mediation-heading">מרכז הגישור</h2>
+                <p>
+                    מרכז הגישור מציע אלטרנטיבה מקצועית, מהירה וחסויה לפתרון סכסוכים מסחריים, סכסוכי נדל״ן ומחלוקות אישיות. ללא מלחמות יקרות בבתי המשפט, ובשליטה מלאה שלכם על ההסכם.
+                </p>
+                <a href="https://gishur.law" target="_blank" rel="noopener" class="btn-hotline">
+                    <span>מעבר לאתר מרכז הגישור (gishur.law)</span>
+                    <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div style="background: rgba(11, 14, 20, 0.7); padding: 32px; border-radius: 12px; border: 1px solid var(--border-subtle); text-align: center;">
+                <i class="fas fa-handshake" style="font-size: 3rem; color: var(--accent); margin-bottom: 14px;" aria-hidden="true"></i>
+                <h3 style="font-family: var(--font-display); font-size: 1.3rem; color: #ffffff; margin-bottom: 8px;">שליטה מלאה בתוצאה</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                    הסכמות הדדיות שמקבלות תוקף משפטי מחייב, תוך חיסכון של שנים בעלויות שכר טרחה ואגרות.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-wrap" id="faq-c" aria-labelledby="sec-faq-heading" style="border-top: 1px solid var(--border-subtle);">
+        <div class="section-header-c" style="text-align: center;">
+            <span class="sec-tag-c">מידע מקצועי</span>
+            <h2 class="sec-title-c" id="sec-faq-heading">שאלות נפוצות</h2>
+        </div>
+
+        <div class="faq-c-container">
+            <details class="faq-item-c" open>
+                <summary>
+                    <span>מה כולל שירות ריטיינר למעסיקים ולעסקים?</span>
+                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </summary>
+                <div class="faq-c-content">
+                    מעטפת משפטית שוטפת במחיר חודשי קבוע: זמינות ישירה להתייעצויות, עריכת חוזים והסכמי עבודה, ליווי שימועים רגישים ופתרון בעיות עובדים-מעביד בזמן אמת, המונע תביעות ענק בעתיד.
+                </div>
+            </details>
+
+            <details class="faq-item-c">
+                <summary>
+                    <span>קיבלתי מכתב התראה לפני תביעה. מה הצעד המיידי?</span>
+                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </summary>
+                <div class="faq-c-content">
+                    לא להתעלם ולא להגיב מהבטן. פנו מיד לייעוץ משפטי. תגובה מקצועית בשלב זה יכולה לחשוף חולשות בטענות הצד השני ולמנוע את הגשת התביעה.
+                </div>
+            </details>
+
+            <details class="faq-item-c">
+                <summary>
+                    <span>האם המשרד מטפל גם בחובות קטנים או בינוניים?</span>
+                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </summary>
+                <div class="faq-c-content">
+                    בהחלט. יש לנו מסלול מהיר לתביעות על סכום קצוב (עד 75,000 ₪) המוגשות ישירות להוצאה לפועל ללא צורך בהתדיינות משפטית ארוכה, וכן מימוש צ'קים ושטרות.
+                </div>
+            </details>
+
+            <details class="faq-item-c">
+                <summary>
+                    <span>מה היתרון של הליך גישור במרכז הגישור על פני בית משפט?</span>
+                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </summary>
+                <div class="faq-c-content">
+                    הליך מהיר שמסתיים בשבועות ספורים, חיסכון עצום בהוצאות משפט, דיסקרטיות מוחלטת ושליטה מלאה שלכם על הפתרון, ללא כפייה של שופט.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section-wrap" id="contact-c" aria-labelledby="sec-contact-heading" style="border-top: 1px solid var(--border-subtle);">
+        <div class="section-header-c">
+            <span class="sec-tag-c">יצירת קשר</span>
+            <h2 class="sec-title-c" id="sec-contact-heading">תיאום פגישת אסטרטגיה</h2>
+            <p style="color: var(--text-secondary); font-size: 1.05rem;">פנו אלינו לבדיקה דיסקרטית וממוקדת של המקרה שלכם.</p>
+        </div>
+
+        <div class="contact-c-frame">
+            <div>
+                <form action="https://formspree.io/f/xnjjeykw" method="POST" onsubmit="return validateContactFormC()">
+                    <div class="form-group-c">
+                        <label for="name_c">שם מלא *</label>
+                        <input type="text" id="name_c" name="name" class="input-c" placeholder="ישראל ישראלי" required autocomplete="name">
+                    </div>
+
+                    <div class="form-group-c">
+                        <label for="phone_c">טלפון נייד *</label>
+                        <input type="tel" id="phone_c" name="phone" class="input-c" placeholder="050-0000000" required autocomplete="tel" inputmode="tel">
+                    </div>
+
+                    <div class="form-group-c">
+                        <label for="email_c">אימייל</label>
+                        <input type="email" id="email_c" name="email" class="input-c" placeholder="office@domain.co.il" autocomplete="email">
+                    </div>
+
+                    <div class="form-group-c">
+                        <label for="msg_c">פרטי המקרה בקצרה</label>
+                        <textarea id="msg_c" name="message" class="input-c" rows="4" placeholder="תארו את הזירה המשפטית והסוגיה הדורשת פתרון" style="resize: vertical;"></textarea>
+                    </div>
+
+                    <div style="display: flex; align-items: flex-start; gap: 10px; margin: 20px 0; font-size: 0.88rem; color: var(--text-muted);">
+                        <input type="checkbox" id="legal_consent_c" required style="margin-top: 4px; accent-color: var(--accent); width: 18px; height: 18px;">
+                        <label for="legal_consent_c">הפנייה אינה יוצרת יחסי עו״ד–לקוח ונמסרת לתיאום פגישה ראשונית בלבד.</label>
+                    </div>
+
+                    <button type="submit" class="btn-hotline" style="width: 100%; justify-content: center; border: none; cursor: pointer;">
+                        <span>שליחת פנייה לבדיקה</span>
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div style="background: rgba(11, 14, 20, 0.6); padding: 32px; border-radius: 12px; border: 1px solid var(--border-subtle); display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: #ffffff; margin-bottom: 20px;">עו״ד עופר כגן | O.K LAW</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 16px;">
+                        מגדל כיכר המושבה, רחוב סוקולוב 46, קומה 7, משרד 705, הוד השרון.
+                    </p>
+                    <p style="margin-bottom: 10px;"><strong>טלפון משרד:</strong> <a href="tel:+972774140097" style="color: var(--accent); text-decoration: none;">077-4140097</a></p>
+                    <p style="margin-bottom: 10px;"><strong>טלפון נייד:</strong> <a href="tel:+972504084810" style="color: var(--accent); text-decoration: none;">050-4084810</a></p>
+                    <p style="margin-bottom: 10px;"><strong>דואר אלקטרוני:</strong> <a href="mailto:ofer@lk-law.co.il" style="color: var(--accent); text-decoration: none;">ofer@lk-law.co.il</a></p>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 24px;">
+                    <a href="https://waze.com/ul?q=Sokolov+46+Hod+Hasharon" target="_blank" rel="noopener" style="flex:1; background: #33ccff; color: #000; text-align: center; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: 700;">Waze</a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Sokolov+46+Hod+Hasharon" target="_blank" rel="noopener" style="flex:1; background: #4285F4; color: #fff; text-align: center; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: 700;">Google Maps</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Floating WhatsApp Action -->
+<a href="https://wa.me/972504084810?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%A2%D7%95%D7%B4%D7%93%20%D7%9B%D7%92%D7%9F%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%99%D7%90%D7%95%D7%9D%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%99%D7%99%D7%A2%D7%95%D7%A5." class="whatsapp-dock" target="_blank" rel="noopener" aria-label="פתח שיחת WhatsApp עם עו&quot;ד עופר כגן">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+<!-- Site Footer -->
+<footer class="site-footer">
+    <div class="footer-grid-c">
+        <div>
+            <h4>עו״ד עופר כגן | O.K LAW</h4>
+            <p style="line-height: 1.6; color: var(--text-muted);">
+                משרד בוטיק בהוד השרון: דיני עבודה למעסיקים, ליטיגציה מסחרית, גבייה משפטית ומרכז הגישור. 17 שנות ניסיון.
+            </p>
+        </div>
+        <div>
+            <h4>ניווט באתר</h4>
+            <ul>
+                <li><a href="#situation-room">חדר מצב אסטרטגי</a></li>
+                <li><a href="#services-c">תחומי עיסוק</a></li>
+                <li><a href="#about-c">אודות המשרד</a></li>
+                <li><a href="#mediation-c">מרכז הגישור</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>פעילות</h4>
+            <ul>
+                <li>ימים א׳–ה׳: 09:00 - 18:00</li>
+                <li>סוקולוב 46, קומה 7, הוד השרון</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-legal-c">
+        <div>
+            © 2026 עו״ד עופר כגן. כל הזכויות שמורות. ט.ל.ח.
+        </div>
+        <div style="display: flex; gap: 16px;">
+            <a href="../terms.html">תקנון האתר</a>
+            <a href="../privacy.html">מדיניות פרטיות</a>
+            <a href="#top">נגישות (WCAG 2.0 AA)</a>
+            <a href="index.html">מרכז הקונספטים</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Navigation toggle
+    function toggleNavMenuC() {
+        const nav = document.getElementById('mainNavC');
+        const btn = document.getElementById('menuToggleBtnC');
+        const isExpanded = nav.classList.toggle('active');
+        btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+    }
+
+    // Toggle Filming Spec
+    function toggleSpecC() {
+        const box = document.getElementById('specBoxC');
+        const btn = document.getElementById('specBtnC');
+        const isOpen = box.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    // Interactive Scenario Room Selector
+    function selectScenario(index) {
+        for (let i = 0; i < 4; i++) {
+            const tab = document.getElementById('tab' + i);
+            const panel = document.getElementById('panel' + i);
+            if (tab) {
+                tab.classList.toggle('active', i === index);
+                tab.setAttribute('aria-selected', i === index ? 'true' : 'false');
+            }
+            if (panel) {
+                panel.classList.toggle('active', i === index);
+            }
+        }
+    }
+
+    // Respect prefers-reduced-motion
+    const motionPrefC = window.matchMedia('(prefers-reduced-motion: reduce)');
+    function evaluateMotionC(mq) {
+        const video = document.getElementById('chamberVideo');
+        if (!video) return;
+        if (mq.matches) {
+            video.pause();
+        } else {
+            video.play().catch(function() {});
+        }
+    }
+    evaluateMotionC(motionPrefC);
+    motionPrefC.addEventListener('change', evaluateMotionC);
+
+    // Form Validation (Israeli Phone)
+    function validateContactFormC() {
+        const phone = document.getElementById('phone_c').value.replace(/\D/g, '');
+        const regex = /^05\d{8}$/;
+        if (!regex.test(phone)) {
+            alert('אנא הזינו מספר טלפון נייד תקין בן 10 ספרות (מתחיל ב-05).');
+            document.getElementById('phone_c').focus();
+            return false;
+        }
+        return true;
+    }
+</script>
+
+</body>
+</html>
