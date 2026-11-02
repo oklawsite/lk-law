@@ -200,6 +200,10 @@
         .fade-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .fade-on-scroll.visible { opacity: 1; transform: translateY(0); }
 
+        
+        :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+        .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
         /* Top Bar & Header */
         .top-bar { background: #05111f; color: #aaadc4; padding: 5px 5%; font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(197, 160, 89, 0.2); }
         .top-bar-item { display: flex; align-items: center; gap: 8px; }
@@ -236,8 +240,8 @@
         /* Stats */
         .stats { display: flex; justify-content: space-around; background: var(--white); padding: 25px 5%; box-shadow: 0 10px 40px rgba(0,0,0,0.06); max-width: 1100px; margin: -40px auto 30px; border-radius: 12px; position: relative; z-index: 10; border-bottom: 4px solid var(--accent); }
         .stat-item { text-align: center; }
-        .stat-num { font-size: 2.5rem; color: var(--accent); font-weight: 700; display: block; line-height: 1; margin-bottom: 5px; }
-        .stat-item strong { color: #64748b; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; }
+        .stat-num { font-size: 2.5rem; color: #8f6826; font-weight: 700; display: block; line-height: 1; margin-bottom: 5px; }
+        .stat-item strong { color: #334155; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
 
         /* Ticker */
         .ticker-wrap { background: var(--bg-deep); color: white; display: flex; align-items: center; padding: 10px 0; overflow: hidden; position: relative; }
@@ -272,7 +276,7 @@
         .section-title { text-align: center; margin-bottom: 35px; position: relative; }
         .section-title h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 10px; }
         .divider { height: 3px; width: 60px; background: var(--accent); margin: 0 auto 10px; border-radius: 2px; }
-        .sub-title { font-size: 1.1rem; color: #64748b; font-weight: 500; max-width: 600px; margin: 0 auto; border-top: 1px solid #e2e8f0; padding-top: 10px; display: inline-block;}
+        .sub-title { font-size: 1.1rem; color: #334155; font-weight: 500; max-width: 600px; margin: 0 auto; border-top: 1px solid #e2e8f0; padding-top: 10px; display: inline-block;}
 
         /* About */
         .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: center; }
@@ -320,7 +324,7 @@
         /* Media Card Styles */
         .media-source { background: #f1f5f9; color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 800; margin-bottom: 15px; display: inline-block; border: 1px solid #e2e8f0; }
         .why-item.media-card p { flex-grow: 1; margin-bottom: 20px; font-size: 0.95rem; }
-        .read-more-btn { color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.95rem; border: 1px solid var(--accent); padding: 8px 20px; border-radius: 50px; transition: 0.3s; margin-top: auto; }
+        .read-more-btn { color: #855f19; text-decoration: none; font-weight: 700; font-size: 0.95rem; border: 1.5px solid #855f19; padding: 8px 20px; border-radius: 50px; transition: 0.3s; margin-top: auto; }
         .read-more-btn:hover { background: var(--accent); color: white; }
 
         .slider-wrap { position: relative; overflow: hidden; padding: 10px 0; min-height: 250px; }
@@ -359,7 +363,7 @@
         .reviewer-info { display: flex; align-items: center; gap: 15px; margin-top: 25px; }
         .reviewer-avatar { width: 55px; height: 55px; background: #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--bg-deep); font-weight: 700; border: 3px solid var(--accent); }
         .reviewer-details h4 { color: var(--bg-deep); font-size: 1.1rem; margin-bottom: 3px; }
-        .reviewer-details span { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
+        .reviewer-details span { color: #725210; font-weight: 700; font-size: 0.85rem; }
 
         /* FAQ */
         .faq-container { max-width: 850px; margin: 0 auto; }
@@ -390,7 +394,7 @@
         .nav-btn { display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; color: white; font-size: 0.95rem; }
         .nav-btn.waze { background: #33ccff; color: #000; }
         .nav-btn.waze:hover { background: #66d9ff; }
-        .nav-btn.google { background: #4285F4; }
+        .nav-btn.google { background: #1558d6; }
         .nav-btn.google:hover { background: #5c97f7; }
 
         /* Footer */
@@ -468,7 +472,7 @@
     <div class="hamburger" onclick="toggleMenu()" role="button" tabindex="0" aria-label="תפריט ניווט" aria-expanded="false" aria-controls="navMenu">
         <i class="fas fa-bars"></i>
     </div>
-    <a href="#top" class="site-logo" aria-label="לוגו עופר כגן - חזרה לדף הבית">
+    <a href="#top" class="site-logo">
         <div class="logo-icon"><i class="fas fa-scale-balanced"></i></div>
         <div class="logo-text">
             <span class="logo-main">O.K LAW</span>
@@ -520,7 +524,7 @@
     </div>
     <div class="about-grid">
         <div class="image-stack">
-            <picture><source srcset="images/ofer-studio-1.webp" type="image/webp"><img src="images/ofer-studio-1.jpg" width="800" height="1200" alt="עורך דין עופר כגן" class="img-front" loading="lazy" onerror="this.onerror=null; this.src='images/logo_final.png';"></picture>
+            <picture><source srcset="images/ofer-studio-1.webp" type="image/webp"><img src="images/ofer-studio-1.jpg" width="800" height="1200" alt="עו\"ד עופר כגן - מייסד המשרד, מומחה בליטיגציה אזרחית-מסחרית וגישור" class="img-front" loading="lazy" onerror="this.onerror=null; this.src='images/logo_final.png';"></picture>
         </div>
         <div class="about-text">
             <h3>עו"ד עופר כגן – אסטרטג משפטי</h3>
@@ -580,7 +584,7 @@
                     </ul>
                 </div>
                 <div class="service-img-box">
-                    <img src="images/litigation.jpg" width="1200" height="800" alt="אולם בית משפט - ליטיגציה" loading="lazy" onerror="this.onerror=null; this.src='images/logo_final.png';">
+                    <img src="images/litigation.jpg" width="1200" height="800" alt="אולם דיונים בבית המשפט - ייצוג וליטיגציה מסחרית" loading="lazy" onerror="this.onerror=null; this.src='images/logo_final.png';">
                 </div>
                 <div class="service-cta"><a href="#contact">לייעוץ בנושא ליטיגציה <i class="fas fa-arrow-left"></i></a></div>
             </div>
@@ -601,7 +605,7 @@
                     </ul>
                 </div>
                 <div class="service-img-box">
-                    <img src="images/labor.jpg" width="1200" height="801" alt="לחיצת יד עסקית - דיני עבודה" loading="lazy" onerror="this.onerror=null; this.src='images/logo_final.png';">
+                    <img src="images/labor.jpg" width="1200" height="801" alt="פגישת ייעוץ עסקי - דיני עבודה וייצוג מעסיקים" loading="lazy" onerror="this.onerror=null; this.src='images/logo_final.png';">
                 </div>
                 <div class="service-cta">
                     <a href="#contact">לייעוץ למעסיקים ועובדים <i class="fas fa-arrow-left"></i></a>
@@ -623,7 +627,7 @@
                     </ul>
                 </div>
                 <div class="service-img-box">
-                    <img src="images/realestate.jpg" width="1200" height="901" alt="בניינים גבוהים - נדלן" loading="lazy" onerror="this.onerror=null; this.src='images/logo_final.png';">
+                    <img src="images/realestate.jpg" width="1200" height="901" alt="מגדלי משרדים ומסחר - ליווי עסקאות נדל\"ן ומקרקעין" loading="lazy" onerror="this.onerror=null; this.src='images/logo_final.png';">
                 </div>
                 <div class="service-cta"><a href="#contact">לליווי עסקת נדל"ן <i class="fas fa-arrow-left"></i></a></div>
             </div>
@@ -643,7 +647,7 @@
                     </ul>
                 </div>
                 <div class="service-img-box">
-                    <img src="images/debt.jpg" width="1200" height="800" alt="מסמכים פיננסיים - גבייה" loading="lazy" onerror="this.onerror=null; this.src='images/logo_final.png';">
+                    <img src="images/debt.jpg" width="1200" height="800" alt="מסמכי הסדרים כספיים - גבייה משפטית והוצאה לפועל" loading="lazy" onerror="this.onerror=null; this.src='images/logo_final.png';">
                 </div>
                 <div class="service-cta"><a href="#contact">לפגישת ייעוץ בנושאי חובות <i class="fas fa-arrow-left"></i></a></div>
             </div>
@@ -703,7 +707,7 @@
     <div class="mediation-bg"></div>
     <div class="mediation-content">
         <div class="mediation-img-box">
-            <img src="images/hila.jpg" width="1200" height="1800" alt="עו'ד ומגשרת הילה דיין" loading="lazy" onerror="this.onerror=null; this.src='images/logo_final.png';">
+            <img src="images/hila.jpg" width="1200" height="1800" alt="עו\"ד ומגשרת הילה דיין - מרכז הגישור ויישוב סכסוכים" loading="lazy" onerror="this.onerror=null; this.src='images/logo_final.png';">
             <div class="mediation-badge"><i class="fas fa-certificate"></i> בהנהלת המגשרת עו"ד הילה דיין</div>
         </div>
         <div class="mediation-text">
@@ -759,16 +763,20 @@
         
         <form action="https://formspree.io/f/xnjjeykw" method="POST" onsubmit="return validateForm()">
             <div class="form-group">
-                <input type="text" name="name" autocomplete="name" class="form-input" placeholder="שם מלא" required aria-label="שם מלא">
+                <label for="form-name" class="visually-hidden">שם מלא</label>
+                <input type="text" id="form-name" name="name" autocomplete="name" class="form-input" placeholder="שם מלא" required aria-label="שם מלא">
             </div>
             <div class="form-group">
+                <label for="phone" class="visually-hidden">טלפון נייד</label>
                 <input type="tel" name="phone" id="phone" autocomplete="tel" inputmode="tel" class="form-input" placeholder="טלפון נייד" required aria-label="טלפון נייד">
             </div>
             <div class="form-group">
-                <input type="email" name="email" autocomplete="email" class="form-input" placeholder="אימייל (לא חובה)" aria-label="כתובת אימייל">
+                <label for="form-email" class="visually-hidden">כתובת אימייל</label>
+                <input type="email" id="form-email" name="email" autocomplete="email" class="form-input" placeholder="אימייל (לא חובה)" aria-label="כתובת אימייל">
             </div>
             <div class="form-group">
-                <textarea name="message" class="form-input" placeholder="באיזה נושא נוכל לעזור?" style="height: 120px; resize: none;" aria-label="תוכן ההודעה"></textarea>
+                <label for="form-message" class="visually-hidden">תוכן הפנייה</label>
+                <textarea id="form-message" name="message" class="form-input" placeholder="באיזה נושא נוכל לעזור?" style="height: 120px; resize: none;" aria-label="תוכן ההודעה"></textarea>
             </div>
             
             <div class="form-checkbox-wrap">
